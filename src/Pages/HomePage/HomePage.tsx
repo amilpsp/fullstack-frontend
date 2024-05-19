@@ -1,9 +1,13 @@
-import React from 'react'
+import './HomePage.css'
 
-/* interface Props {} */
+/* type Props = {} */
 
 const HomePage = (/* props: Props */) => {
-    return <div>HomePage</div>
+    return (
+        <div>
+            <p>This is path "/", HomePage content goes here</p>
+        </div>
+    )
 }
 
 export default HomePage

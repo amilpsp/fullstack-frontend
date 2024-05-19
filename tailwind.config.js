@@ -10,12 +10,14 @@ export default {
         },
         extend: {
             colors: {
-                lightBlue: 'hsl(215.02, 98.39%, 51.18%)',
-                darkBlue: 'hsl(213.86, 58.82%, 46.67%)',
-                lightGreen: 'hsl(156.62, 73.33%, 58.82%)'
+                white: '#ffffff',
+                bordercol: '#303030',
+                txtbright: '#CFCFCF',
+                txtdark: '#8E8E8E',
+                bgcol: '#060606'
             },
             fontFamily: {
-                sans: ['Poppins', 'sans-serif']
+                sans: ['Inter', 'sans-serif']
             },
             spacing: {
                 180: '32rem'

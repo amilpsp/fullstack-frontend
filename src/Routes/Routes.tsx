@@ -13,7 +13,7 @@ export const router = createBrowserRouter([
             { path: '', element: <HomePage /> },
             { path: 'account', element: <AccountPage /> },
             { path: 'search', element: <SearchPage /> },
-            { path: 'thread/:threadId', element: <ThreadPage /> }
+            { path: 'thread', element: <ThreadPage /> }
         ]
     }
 ])

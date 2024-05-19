@@ -1,12 +1,18 @@
 import './index.css'
 import Navbar from './Components/Navbar/Navbar'
-import Thread from './Components/Thread/Thread'
+import { Outlet } from 'react-router'
+import Footer from './Components/Footer/Footer'
 
 function App() {
     return (
         <>
-            <Navbar />
-            <Thread />
+            <div className="bg-bgcol text-txtbright">
+                <Navbar />
+                <div className="p-5 text-sm">
+                    <Outlet />
+                </div>
+                <Footer />
+            </div>
         </>
     )
 }

@@ -1,9 +1,13 @@
-import React from 'react'
+import './AccountPage.css'
 
-/* interface Props {} */
+/* type Props = {} */
 
 const AccountPage = (/* props: Props */) => {
-    return <div>AccountPage</div>
+    return (
+        <div>
+            <p>This is path "/account", AccountPage content goes here</p>
+        </div>
+    )
 }
 
 export default AccountPage

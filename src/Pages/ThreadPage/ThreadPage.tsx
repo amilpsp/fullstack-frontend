@@ -1,9 +1,13 @@
-import React from 'react'
+import './ThreadPage.css'
 
-/* interface Props {} */
+/* type Props = {} */
 
 const ThreadPage = (/* props: Props */) => {
-    return <div>ThreadPage</div>
+    return (
+        <div>
+            <p>This is path "/thread", ThreadPage content goes here</p>
+        </div>
+    )
 }
 
 export default ThreadPage

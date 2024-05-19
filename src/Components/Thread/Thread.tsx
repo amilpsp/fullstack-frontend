@@ -1,7 +1,6 @@
-import React from 'react'
 import './Thread.css'
 
-/* interface Props {} */
+/* type Props = {} */
 
 const Thread = (/* props: Props */) => {
     return (

@@ -1,9 +1,13 @@
-import React from 'react'
+import './SearchPage.css'
 
-/* interface Props {} */
+/* type Props = {} */
 
 const SearchPage = (/* props: Props */) => {
-    return <div>SearchPage</div>
+    return (
+        <div>
+            <p>This is path "/search", Searchpage content goes here</p>
+        </div>
+    )
 }
 
 export default SearchPage
