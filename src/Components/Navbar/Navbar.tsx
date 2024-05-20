@@ -1,27 +1,37 @@
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import SearchBar from '../SearchBar/SearchBar'
 
-/* type Props = {} */
-
-const Navbar = (/* props: Props */) => {
+const Navbar: React.FC = () => {
     return (
-        <div className="flex p-5 mb-2 text-txtdark border-b-[1px] border-bordercol">
-            <p className="mr-10">Navbar</p>
-            <ul className="flex space-x-6 text-white text-xs">
-                <li>
-                    <Link to="">HomePage</Link>
-                </li>
-                <li>
-                    <Link to="/account">AccountPage</Link>
-                </li>
-                <li>
-                    <Link to="/search">SearchPage</Link>
-                </li>
-                <li>
-                    <Link to="/thread">ThreadPage</Link>
-                </li>
-            </ul>
-        </div>
+        <nav className="relative flex w-full flex-wrap items-center justify-between bg-bgcol border-b-[1px] border-bordercol h-24">
+            <div className="flex w-full flex-wrap items-center justify-between px-3">
+                {/* LEFT - Logo */}
+                <div className="flex">
+                    <Link
+                        to=""
+                        className="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0"
+                    >
+                        <img
+                            src="templogo.png"
+                            alt="logo"
+                            className="max-h-12 me-2"
+                        />
+                    </Link>
+                </div>
+                {/* MIDDLE - Search Bar*/}
+                <div className="mx-auto hidden flex-row ps-0 md:flex">
+                    <SearchBar />
+                </div>
+
+                {/* RIGHT - Create, My Threads, Login */}
+                <ul className="list-style-none flex flex-row ps-0 md:ps-4">
+                    <li className="px-2">icon 1</li>
+                    <li className="px-2">icon 2</li>
+                    <li className="px-2">icon 3</li>
+                </ul>
+            </div>
+        </nav>
     )
 }
 
