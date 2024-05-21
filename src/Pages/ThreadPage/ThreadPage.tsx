@@ -3,7 +3,7 @@ import './ThreadPage.css'
 import Reply from "../../Components/Reply/Reply";
 import "/src/Components/Reply/Reply.tsx";
 /* import { TextField } from "@mui/material";  */
-type Props = {
+/* type Props = {
   threadTitle:string;
   forum:string;
   postContent:string;
@@ -11,9 +11,47 @@ type Props = {
   createdDate:string;
   createdTime:string;
   replyAmount:number;
-}
-const ThreadPage = (props: Props) => {
+} */
 
+const ThreadPage = (/* props: Props */) => {
+  const mockPost = {
+      name: "Lorem Ipsum",
+      content:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet",
+      date: "January 1, 2000",
+      time: "10:11",
+      originalPoster: "John Doe",
+      topic: "games",
+      replies: 3,
+      lastReply: {
+        name: "Jane Doe",
+        date: "January 2, 2001",
+        time: "10:27",
+      },
+    }
+  const mockReplies=[
+  {
+    id:1,
+    body:"Trying to make some fake comments",
+    author:"me",
+    date:"2024/05/21",
+    time:"12:56"
+  },
+  {
+    id:2,
+    body:"seccond fake comment, let's see",
+    author:"her",
+    date:"2024/05/21",
+    time:"12:56"
+  },
+  {
+    id:3,
+    body:"well ok it works",
+    author:"him",
+    date:"2024/05/21",
+    time:"12:56"
+  }
+]
   return (
     <div
       id="thread-page"
@@ -23,20 +61,20 @@ const ThreadPage = (props: Props) => {
       <section className="flex flex-col gap-6 ">
         <article id="post-body" className="border rounded-lg p-4">
           <div className="flex flex-row justify-between">
-            <h2 className="text-xl">{props.threadTitle}</h2>
+            <h2 className="text-xl">{mockPost.name}</h2>
             <div className="text-xs">
-              posted on <span>{props.forum}</span>
+              posted on <span>{mockPost.topic}</span>
             </div>
           </div>
           <p>
-            {props.postContent}
+            {mockPost.content}
           </p>
         </article>
         {/* end of post body */}
         <div id="post-info" className="flex flex-row justify-end gap-2">
-          <span>{props.author}</span>
-          <span>{props.createdDate}</span>
-          <span>{props.createdTime}</span>
+          <span>{mockPost.originalPoster}</span>
+          <span>{mockPost.date}</span>
+          <span>{mockPost.time}</span>
         </div>
       </section>
 
@@ -52,11 +90,13 @@ const ThreadPage = (props: Props) => {
 
       <section className="flex flex-col gap-4">
         <div>
-          <span className="text-xl">{props.replyAmount} replies</span> <hr className="mb-4" />
+          <span className="text-xl">{/* props.replyAmount */} replies</span> <hr className="mb-4" />
         </div>
-        <Reply replyBody='Hello there' replyAuthor='Kenobi' replyCreatedDate='today'replyCreatedTime='01:23' />
-        <Reply replyBody='General Kenobiiii' replyAuthor='Grievous' replyCreatedDate='today'replyCreatedTime='01:23' />
-        
+        {mockReplies.map((reply)=>{
+          return(
+            <Reply key={reply.id} replyAuthor={reply.author} replyBody={reply.body} replyCreatedDate={reply.date} replyCreatedTime={reply.time} ></Reply>
+          )
+        })}
       </section>
     </div>
   );
