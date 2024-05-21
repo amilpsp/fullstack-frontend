@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import SearchBar from '../SearchBar/SearchBar';
+import SignupLogin from '../SignupLogin/SignupLogin';
 
 const Navbar: React.FC = () => {
   return (
@@ -28,6 +29,8 @@ const Navbar: React.FC = () => {
           <li className="px-2">Login</li>
         </ul>
       </div>
+      <SignupLogin />
+      {/* just testing */}
     </nav>
   );
 };

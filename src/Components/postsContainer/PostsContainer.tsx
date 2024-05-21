@@ -15,7 +15,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
           Recent threads
         </h1>
         <div className="border-b border-[#303030] flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
-        <button className="flex items-center gap-2 hover:opacity-75">
+        <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright">
           <svg
             width="20"
             height="20"
@@ -25,21 +25,21 @@ export const PostsContainer = (props: PostsContainerProps) => {
           >
             <path
               d="M14 25.6667C20.4434 25.6667 25.6667 20.4433 25.6667 14C25.6667 7.55668 20.4434 2.33334 14 2.33334C7.55672 2.33334 2.33337 7.55668 2.33337 14C2.33337 20.4433 7.55672 25.6667 14 25.6667Z"
-              stroke="#CFCFCF"
+              stroke="current"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M14 9.33334V18.6667"
-              stroke="#CFCFCF"
+              stroke="current"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M9.33337 14H18.6667"
-              stroke="#CFCFCF"
+              stroke="current"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -78,7 +78,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
                     <p className="text-[#8E8E8E]">
                       {post.content.length < 125
                         ? post.content
-                        : post.content.slice(0, 125) + "..."}
+                        : post.content.slice(0, 125) + '...'}
                     </p>
                   </td>
                   <td className=" py-2 pr-5">{post.topic}</td>
