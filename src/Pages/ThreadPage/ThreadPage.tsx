@@ -1,6 +1,6 @@
-import './ThreadPage.css'
-import Reply from "../../Components/Reply/Reply";
-import "/src/Components/Reply/Reply.tsx";
+import './ThreadPage.css';
+import Reply from '../../Components/Reply/Reply';
+import '/src/Components/Reply/Reply.tsx';
 /* import { TextField } from "@mui/material"; /* type Props = {} */
 
 const ThreadPage = (/* props: Props */) => {
@@ -59,4 +59,4 @@ const ThreadPage = (/* props: Props */) => {
   );
 };
 
-export default ThreadPage
+export default ThreadPage;
