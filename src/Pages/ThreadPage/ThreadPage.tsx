@@ -93,9 +93,15 @@ const ThreadPage = (/* props: Props */) => {
           <span className="text-xl">{/* props.replyAmount */} replies</span> <hr className="mb-4" />
         </div>
         {mockReplies.map((reply)=>{
-          return(
-            <Reply key={reply.id} replyAuthor={reply.author} replyBody={reply.body} replyCreatedDate={reply.date} replyCreatedTime={reply.time} ></Reply>
-          )
+          return (
+						<Reply
+							key={reply.id}
+							replyAuthor={reply.author}
+							replyBody={reply.body}
+							replyCreatedDate={reply.date}
+							replyCreatedTime={reply.time}
+						></Reply>
+					);
         })}
       </section>
     </div>
