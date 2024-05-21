@@ -14,7 +14,16 @@ export default {
                 bordercol: '#303030',
                 txtbright: '#CFCFCF',
                 txtdark: '#8E8E8E',
-                bgcol: '#060606'
+                bgcol: '#060606',
+                ig1: '#0043E6',
+                ig2: '#E70DB2',
+                ig3: '#FFC33D',
+                yt1: '#FF2E2E',
+                yt2: '#A90000',
+                x1: '#272727',
+                x2: '#1B1B1B',
+                fb1: '#4267B2',
+                fb2: '#1847A7'
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif']
@@ -24,5 +33,10 @@ export default {
             }
         }
     },
-    plugins: []
+    plugins: [
+        // eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+        require('tailwindcss/plugin')(({ addVariant }) => {
+            addVariant('search-cancel', '&::-webkit-search-cancel-button')
+        })
+    ]
 }

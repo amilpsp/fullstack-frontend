@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@mui/base": "^5.0.0-beta.40",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource/inter": "^5.0.18",
+    "@mui/joy": "^5.0.0-beta.36",
     "@reduxjs/toolkit": "^2.2.5",
     "axios": "^1.6.8",
     "immer": "^10.1.1",
