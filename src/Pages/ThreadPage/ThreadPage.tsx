@@ -1,3 +1,4 @@
+
 import './ThreadPage.css'
 import Reply from "../../Components/Reply/Reply";
 import "/src/Components/Reply/Reply.tsx";
@@ -12,6 +13,7 @@ type Props = {
   replyAmount:number;
 }
 const ThreadPage = (props: Props) => {
+
   return (
     <div
       id="thread-page"
@@ -60,4 +62,4 @@ const ThreadPage = (props: Props) => {
   );
 };
 
-export default ThreadPage
+export default ThreadPage;
