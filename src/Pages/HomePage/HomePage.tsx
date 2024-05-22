@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
 import "./Homepage.css";
+import axios from "axios";
 
 const HomePage = () => {
   const categories = [
@@ -161,6 +163,17 @@ const HomePage = () => {
     posts: mockdata,
   };
 
+  const handlePostsFetch = async () => {
+    try {
+      let response = await axios.get("http://localhost:8080/posts");
+      console.log(response.data[0]);
+    } catch (error) {}
+  };
+
+  useEffect(() => {
+    handlePostsFetch();
+  }, []);
+
   return (
     <div className="">
       <nav className=" flex justify-center">
@@ -192,6 +205,5 @@ const HomePage = () => {
     </div>
   );
 };
-
 
 export default HomePage;
