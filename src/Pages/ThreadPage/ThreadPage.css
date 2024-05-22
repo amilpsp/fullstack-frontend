@@ -1,0 +1,4 @@
+.textarea-field-sizing {
+  field-sizing: content;
+  /* This is a new css property, we might need to throw it in the trash but i love it */
+}

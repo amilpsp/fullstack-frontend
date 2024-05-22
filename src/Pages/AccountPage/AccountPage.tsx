@@ -67,26 +67,30 @@ const AccountPage = () => {
   };
 
   return (
-    <div className="py-4">
-      <h1 className="text-lg">My account</h1>
+    <div>
+      {/* Breadcrumbs here */}
+      <p className="m-1 text-center">/Account</p>
+      <div className="py-4">
+        <h1 className="text-lg cursor-default">My account</h1>
 
-      <div className="flex my-4">
-        <p className="mt-1.5">
-          Name: <b className="ml-4">John Doe</b>
+        <div className="flex my-4">
+          <p className="mt-1.5 cursor-default">
+            Name: <b className="ml-4">John Doe</b>
+          </p>
+          <button className="flex justify-center items-center text-txtbright hover:bg-bordercol border-bordercol border-[1px] rounded-lg w-20 h-8 p-4 text-sm ml-6">
+            Change
+          </button>
+        </div>
+        <p>
+          <u className="cursor-pointer hover:text-white">Change password</u>
         </p>
-        <button className="flex justify-center items-center text-txtbright bg-bgcol border-bordercol border-[1px] rounded-lg w-20 h-8 p-4 text-sm ml-6">
-          Change
-        </button>
-      </div>
-      <p>
-        <u className="cursor-pointer">Change password</u>
-      </p>
 
-      <PostsContainer
-        title={postsContainerInfo.title}
-        image={postsContainerInfo.svg}
-        posts={postsContainerInfo.posts}
-      />
+        <PostsContainer
+          title={postsContainerInfo.title}
+          image={postsContainerInfo.svg}
+          posts={postsContainerInfo.posts}
+        />
+      </div>
     </div>
   );
 };
