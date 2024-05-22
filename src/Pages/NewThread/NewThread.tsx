@@ -1,7 +1,13 @@
-import Button from "@mui/joy/Button";
-import ButtonGroup from "@mui/joy/ButtonGroup";
+/* import Button from "@mui/joy/Button";
+import ButtonGroup from "@mui/joy/ButtonGroup"; */
 
+import SmTopicButtons from "../../Components/SmTopicButtons/SmTopicButtons";
 const NewThread = () => {
+	/* const [selectedTopic, setSelectedTopic] = React.useState(-1);
+	const handleClick = () => {
+		console.log("hello there");
+		return "hello there";
+	}; */
 	return (
 		<>
 			<form
@@ -25,15 +31,11 @@ const NewThread = () => {
 				<section className="flex justify-between gap-2">
 					<div className="flex gap-2">
 						<span className="">select a topic:</span>
-						<ButtonGroup aria-label="outlined primary button group">
-							<Button>Games</Button>
-							<Button>Movies</Button>
-							<Button>Animals</Button>
-						</ButtonGroup>
+						<SmTopicButtons />
 					</div>
 					<input
 						type="submit"
-						value="submit"
+						value="Submit"
 						className="bg-bgcol border rounded-md border-bordercol text-txtbright p-2"
 					/>
 				</section>
