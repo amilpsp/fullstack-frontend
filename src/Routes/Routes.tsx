@@ -4,16 +4,18 @@ import HomePage from '../Pages/HomePage/HomePage'
 import AccountPage from '../Pages/AccountPage/AccountPage'
 import SearchPage from '../Pages/SearchPage/SearchPage'
 import ThreadPage from '../Pages/ThreadPage/ThreadPage'
+import NewThread from "../Pages/NewThread/NewThread";
 
 export const router = createBrowserRouter([
-    {
-        path: '/',
-        element: <App />,
-        children: [
-            { path: '', element: <HomePage /> },
-            { path: 'account', element: <AccountPage /> },
-            { path: 'search', element: <SearchPage /> },
-            { path: 'thread', element: <ThreadPage /> }
-        ]
-    }
-])
+	{
+		path: "/",
+		element: <App />,
+		children: [
+			{ path: "", element: <HomePage /> },
+			{ path: "account", element: <AccountPage /> },
+			{ path: "search", element: <SearchPage /> },
+			{ path: "thread", element: <ThreadPage /> },
+			{ path: "newThread", element: <NewThread /> },
+		],
+	},
+]);
