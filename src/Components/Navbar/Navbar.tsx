@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SignupLogin from '../SignupLogin/SignupLogin';
+import SideBarTopics from '../SideBarTopics/SideBarTopics';
 
 const Navbar: React.FC = () => {
   return (
@@ -29,8 +30,9 @@ const Navbar: React.FC = () => {
           <li className="px-2">Login</li>
         </ul>
       </div>
+      <SideBarTopics />
       <SignupLogin />
-      {/* just testing */}
+      {/* ^temp */}
     </nav>
   );
 };
