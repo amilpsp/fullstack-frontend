@@ -1,12 +1,21 @@
+import { useState } from 'react';
 import Tabs from '@mui/joy/Tabs';
 import TabList from '@mui/joy/TabList';
 import Tab from '@mui/joy/Tab';
 import TabPanel from '@mui/joy/TabPanel';
+
 export default function SignupLogin() {
+  const [activeTab, setActiveTab] = useState<number>(0);
   return (
-    <div className="fixed top-[6.5rem] right-2 p-5 max-w-[20%] border-bordercol border-[1px] rounded-lg text-center">
+    <div className="p-5 bg-bgcol border-bordercol border-[1px] md:w-[30vw] lg:w-[20vw] rounded-lg text-center">
       <Tabs
         aria-label="Basic tabs"
+        value={activeTab}
+        onChange={(_, newValue) => {
+          if (typeof newValue === 'number') {
+            setActiveTab(newValue); // Ensure newValue is a number before setting it
+          }
+        }}
         defaultValue={0}
         className="rounded-b-lg"
         sx={{
@@ -60,7 +69,12 @@ export default function SignupLogin() {
           </button>
           <p className="mt-6 mb-2 text-txtdark text-sm">
             Don't have an account?{' '}
-            <span className="text-txtbright cursor-pointer">Signup</span>
+            <span
+              onClick={() => setActiveTab(1)}
+              className="text-txtbright cursor-pointer"
+            >
+              Signup
+            </span>
           </p>
         </TabPanel>
         <TabPanel value={1}>
@@ -89,7 +103,12 @@ export default function SignupLogin() {
           </button>
           <p className="mt-6 mb-2 text-txtdark text-sm">
             Already have an account?{' '}
-            <span className="text-txtbright cursor-pointer">Login</span>
+            <span
+              onClick={() => setActiveTab(0)}
+              className="text-txtbright cursor-pointer"
+            >
+              Login
+            </span>
           </p>
         </TabPanel>
       </Tabs>

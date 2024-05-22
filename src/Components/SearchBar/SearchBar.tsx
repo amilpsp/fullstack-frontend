@@ -8,7 +8,7 @@ const SearchBar = () => {
           {/* Search input */}
           <input
             type="search"
-            className="search-cancel:appearance-none search-cancel:w-4 search-cancel:h-4 w-80 relative m-0 block flex-auto rounded-full border border-solid border-transparent bg-txtbright bg-clip-padding px-5 py-1.5 text-txtdark font-normal text-surface transition duration-300 ease-in-out focus:border-black focus:text-black focus:shadow-inset focus:outline-none motion-reduce:transition-none"
+            className="search-cancel:appearance-none search-cancel:w-4 search-cancel:h-4 text-sm w-80 relative m-0 block flex-auto rounded-full border border-solid border-transparent bg-txtbright bg-clip-padding px-5 py-2 text-txtdark font-normal text-surface transition duration-300 ease-in-out focus:border-black focus:text-black focus:shadow-inset focus:outline-none motion-reduce:transition-none"
             /* search-cancel:bg-[url(https://picsum.photos/16/16)] */
             placeholder="Search for a thread..."
             aria-label="Search"
