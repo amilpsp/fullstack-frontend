@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 type PostsContainerProps = {
   title: string;
   image: JSX.Element;
@@ -50,10 +52,10 @@ export const PostsContainer = (props: PostsContainerProps) => {
       </div>
 
       {/* Table */}
-      <div className="rounded-md overflow-hidden border border-bordercol my-5 text-txtbright">
+      <div className="rounded-md overflow-hidden border border-bordercol my-5 text-txtbright bg-odark">
         <table>
           {/* Titles */}
-          <thead className=" border-b border-bordercol justify-between ">
+          <thead className=" border-b border-bordercol justify-between">
             <tr>
               <th className="font-thin text-xs text-left px-5 py-3 ">POST</th>
               <th className="font-thin text-xs text-left pr-5">TOPIC</th>
@@ -71,10 +73,13 @@ export const PostsContainer = (props: PostsContainerProps) => {
               return (
                 <tr
                   key={index}
-                  className=" border-b border-bordercol hover:bg-bordercol cursor-pointer  "
+                  className=" border-b border-bordercol hover:bg-bordercol cursor-pointer"
                 >
                   <td className="p-5 py-2">
-                    <h3>{post.name}</h3>
+                    <Link to="/thread">
+                      {/* temp for navigating the webpage */}
+                      <h3>{post.name}</h3>
+                    </Link>
                     <p className="text-txtdark">
                       {post.content.length < 125
                         ? post.content

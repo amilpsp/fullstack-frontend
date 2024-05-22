@@ -3,7 +3,7 @@ import './Footer.css';
 const Footer = () => {
   return (
     <footer className="w-full text-center border-t-[1px] border-bordercol">
-      <p className="mt-12 text-txtbright">Follow our journey!</p>
+      <p className="mt-12 text-txtbright"></p>
       <ul className="flex flex-row justify-center mt-8 mb-14 text-lg">
         <li className="px-3">
           <svg

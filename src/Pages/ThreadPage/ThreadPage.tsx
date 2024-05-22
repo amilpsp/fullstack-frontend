@@ -61,7 +61,7 @@ const ThreadPage = (/* props: Props */) => {
       <section className="flex flex-col gap-4 ">
         <article
           id="post-body"
-          className="border border-bordercol rounded-lg p-4"
+          className="border border-bordercol rounded-lg p-4 bg-odark"
         >
           <div className="flex flex-row justify-between">
             <h2 className="text-xl mb-4">{mockPost.name}</h2>

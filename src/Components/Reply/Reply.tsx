@@ -8,7 +8,7 @@ const Reply = (props: Props) => {
   return (
     <>
       <article>
-        <p className="border rounded-lg p-4 border-bordercol">
+        <p className="border rounded-lg p-4 border-bordercol bg-odark">
           {props.replyBody}
         </p>
         <div className="flex justify-end mt-2 text-xs ">

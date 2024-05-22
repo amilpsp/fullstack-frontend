@@ -167,7 +167,7 @@ const HomePage = () => {
         <ul className="flex gap-5">
           <li
             key={'all'}
-            className="border flex items-center px-7 py-4 rounded-lg text-lg border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test"
+            className="border flex items-center px-7 py-4 rounded-lg text-lg border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test bg-odark"
           >
             all
           </li>
@@ -175,7 +175,7 @@ const HomePage = () => {
             return (
               <li
                 key={category.name}
-                className="flex gap-2 items-center border px-7 py-2.5 rounded-lg text-xl border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test"
+                className="flex gap-2 items-center border px-7 py-2.5 rounded-lg text-xl border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test bg-odark"
               >
                 {category.svg}
                 {category.name}

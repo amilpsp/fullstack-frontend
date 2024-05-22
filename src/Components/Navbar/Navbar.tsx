@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24">
+    <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24 ">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
         {/* LEFT - Logo */}
         <div className="flex ml-16">
