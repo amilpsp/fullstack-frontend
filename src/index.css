@@ -7,7 +7,11 @@
 body {
   /* GRADIENT BACKGROUND */
   background: rgb(0, 1, 20);
-  background: radial-gradient(circle, rgb(8, 14, 24) 0%, rgba(6, 6, 6, 1) 100%);
+  background: radial-gradient(
+    circle,
+    rgb(15, 15, 15) 0%,
+    rgba(6, 6, 6, 1) 100%
+  );
 
   /* SOLID BACKGROUND */
   /* background-color: #060606; */
