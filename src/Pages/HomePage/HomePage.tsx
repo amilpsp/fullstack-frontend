@@ -1,9 +1,7 @@
-
-import { useEffect, useState } from "react";
-import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
-import "./Homepage.css";
-import axios from "axios";
-
+import { useEffect, useState } from 'react';
+import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
+import './Homepage.css';
+import axios from 'axios';
 
 const HomePage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -105,6 +103,7 @@ const HomePage = () => {
 
   const mockdata = [
     {
+      id: 1,
       name: 'Lorem Ipsum',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
@@ -120,6 +119,7 @@ const HomePage = () => {
       }
     },
     {
+      id: 2,
       name: 'Lorem Ipsum',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
@@ -168,10 +168,12 @@ const HomePage = () => {
 
   const handlePostsFetch = async () => {
     try {
-      let response = await axios.get("http://localhost:8080/posts");
+      const response = await axios.get('http://localhost:8080/posts');
       console.log(response.data[0]);
       setPosts(response.data);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

@@ -5,6 +5,7 @@ const AccountPage = () => {
   /* mockdata */
   const mockdata = [
     {
+      id: 1,
       name: 'Lorem Ipsum',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
@@ -20,6 +21,7 @@ const AccountPage = () => {
       }
     },
     {
+      id: 2,
       name: 'Lorem Ipsum',
       content:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
