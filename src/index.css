@@ -5,5 +5,14 @@
 @tailwind utilities;
 
 body {
-  background-color: #060606;
+  /* GRADIENT BACKGROUND */
+  background: rgb(0, 1, 20);
+  background: radial-gradient(
+    circle,
+    rgb(15, 15, 15) 0%,
+    rgba(6, 6, 6, 1) 100%
+  );
+
+  /* SOLID BACKGROUND */
+  /* background-color: #060606; */
 }

@@ -1,17 +1,19 @@
+
 import { useEffect, useState } from "react";
 import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
 import "./Homepage.css";
 import axios from "axios";
 
+
 const HomePage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const categories = [
     {
-      name: "games",
+      name: 'games',
       svg: (
         <svg
-          width="30"
-          height="30"
+          width="24"
+          height="24"
           viewBox="0 0 38 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -35,14 +37,14 @@ const HomePage = () => {
             />
           </defs>
         </svg>
-      ),
+      )
     },
     {
-      name: "movies",
+      name: 'movies',
       svg: (
         <svg
-          width="30"
-          height="30"
+          width="24"
+          height="24"
           viewBox="0 0 38 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -66,14 +68,14 @@ const HomePage = () => {
             />
           </defs>
         </svg>
-      ),
+      )
     },
     {
-      name: "animals",
+      name: 'animals',
       svg: (
         <svg
-          width="30"
-          height="30"
+          width="24"
+          height="24"
           viewBox="0 0 38 38"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
@@ -97,45 +99,45 @@ const HomePage = () => {
             />
           </defs>
         </svg>
-      ),
-    },
+      )
+    }
   ];
 
   const mockdata = [
     {
-      name: "Lorem Ipsum",
+      name: 'Lorem Ipsum',
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet",
-      date: "January 1, 2000",
-      time: "10:11",
-      originalPoster: "John Doe",
-      topic: "games",
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
+      date: 'January 1, 2000',
+      time: '10:11',
+      originalPoster: 'John Doe',
+      topic: 'games',
       replies: 3,
       lastReply: {
-        name: "Jane Doe",
-        date: "January 2, 2001",
-        time: "10:27",
-      },
+        name: 'Jane Doe',
+        date: 'January 2, 2001',
+        time: '10:27'
+      }
     },
     {
-      name: "Lorem Ipsum",
+      name: 'Lorem Ipsum',
       content:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet",
-      date: "January 5, 2003",
-      time: "10:22",
-      originalPoster: "Jane Doe",
-      topic: "animals",
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
+      date: 'January 5, 2003',
+      time: '10:22',
+      originalPoster: 'Jane Doe',
+      topic: 'animals',
       replies: 20,
       lastReply: {
-        name: "John Doe",
-        date: "January 5, 2022",
-        time: "12:29",
-      },
-    },
+        name: 'John Doe',
+        date: 'January 5, 2022',
+        time: '12:29'
+      }
+    }
   ];
 
   const postsContainerInfo = {
-    title: "Recent threads",
+    title: 'Recent threads',
     svg: (
       <svg
         width="30"
@@ -161,7 +163,7 @@ const HomePage = () => {
         </defs>
       </svg>
     ),
-    posts: mockdata,
+    posts: mockdata
   };
 
   const handlePostsFetch = async () => {
@@ -178,11 +180,11 @@ const HomePage = () => {
 
   return (
     <div className="">
-      <nav className=" flex justify-center">
+      <nav className="flex justify-center">
         <ul className="flex gap-5">
           <li
-            key={"all"}
-            className="border flex items-center px-7 py-4 rounded-lg text-lg border-[#303030] text-center hover:cursor-pointer hover:bg-slate-500"
+            key={'all'}
+            className="border flex items-center px-7 py-4 rounded-lg text-lg border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test bg-odark"
           >
             all
           </li>
@@ -190,7 +192,7 @@ const HomePage = () => {
             return (
               <li
                 key={category.name}
-                className="flex gap-2 items-center border px-7 py-2.5 rounded-lg text-xl border-[#303030] text-center hover:cursor-pointer hover:bg-slate-500"
+                className="flex gap-2 items-center border px-7 py-2.5 rounded-lg text-xl border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test bg-odark"
               >
                 {category.svg}
                 {category.name}

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 type PostsContainerProps = {
   title: string;
   image: JSX.Element;
@@ -14,8 +16,8 @@ export const PostsContainer = (props: PostsContainerProps) => {
         <h1 className=" text-2xl font-light whitespace-nowrap ">
           Recent threads
         </h1>
-        <div className="border-b border-[#303030] flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
-        <button className="flex items-center gap-2 hover:opacity-75">
+        <div className="border-b border-bordercol flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
+        <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright">
           <svg
             width="20"
             height="20"
@@ -25,21 +27,21 @@ export const PostsContainer = (props: PostsContainerProps) => {
           >
             <path
               d="M14 25.6667C20.4434 25.6667 25.6667 20.4433 25.6667 14C25.6667 7.55668 20.4434 2.33334 14 2.33334C7.55672 2.33334 2.33337 7.55668 2.33337 14C2.33337 20.4433 7.55672 25.6667 14 25.6667Z"
-              stroke="#CFCFCF"
+              stroke="current"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M14 9.33334V18.6667"
-              stroke="#CFCFCF"
+              stroke="current"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
             />
             <path
               d="M9.33337 14H18.6667"
-              stroke="#CFCFCF"
+              stroke="current"
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -50,10 +52,10 @@ export const PostsContainer = (props: PostsContainerProps) => {
       </div>
 
       {/* Table */}
-      <div className="rounded-md overflow-hidden border border-[#303030] my-5 text-[#CFCFCF]">
+      <div className="rounded-md overflow-hidden border border-bordercol my-5 text-txtbright bg-odark">
         <table>
           {/* Titles */}
-          <thead className=" border-b border-[#303030] justify-between ">
+          <thead className=" border-b border-bordercol justify-between">
             <tr>
               <th className="font-thin text-xs text-left px-5 py-3 ">POST</th>
               <th className="font-thin text-xs text-left pr-5">TOPIC</th>
@@ -71,14 +73,17 @@ export const PostsContainer = (props: PostsContainerProps) => {
               return (
                 <tr
                   key={index}
-                  className=" border-b border-[#303030] hover:bg-gray-500 cursor-pointer  "
+                  className=" border-b border-bordercol hover:bg-bordercol cursor-pointer"
                 >
                   <td className="p-5 py-2">
-                    <h3>{post.name}</h3>
-                    <p className="text-[#8E8E8E]">
+                    <Link to="/thread">
+                      {/* temp for navigating the webpage */}
+                      <h3>{post.name}</h3>
+                    </Link>
+                    <p className="text-txtdark">
                       {post.content.length < 125
                         ? post.content
-                        : post.content.slice(0, 125) + "..."}
+                        : post.content.slice(0, 125) + '...'}
                     </p>
                   </td>
                   <td className=" py-2 pr-5">{post.topic}</td>
@@ -124,10 +129,10 @@ export const PostsContainer = (props: PostsContainerProps) => {
                     <h3 className=" whitespace-nowrap">
                       {post.lastReply.name}
                     </h3>
-                    <h4 className=" whitespace-nowrap text-[#8E8E8E]">
+                    <h4 className=" whitespace-nowrap text-txtdark">
                       {post.lastReply.date}
                     </h4>
-                    <h4 className=" whitespace-nowrap text-[#8E8E8E]">
+                    <h4 className=" whitespace-nowrap text-txtdark">
                       {post.lastReply.time}
                     </h4>
                   </td>
@@ -135,10 +140,10 @@ export const PostsContainer = (props: PostsContainerProps) => {
                     <h3 className=" whitespace-nowrap">
                       {post.originalPoster}
                     </h3>
-                    <h4 className=" whitespace-nowrap text-[#8E8E8E]">
+                    <h4 className=" whitespace-nowrap text-txtdark">
                       {post.date}
                     </h4>
-                    <h4 className=" whitespace-nowrap text-[#8E8E8E]">
+                    <h4 className=" whitespace-nowrap text-txtdark">
                       {post.time}
                     </h4>
                   </td>
