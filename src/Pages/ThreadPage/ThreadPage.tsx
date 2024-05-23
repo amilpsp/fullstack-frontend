@@ -85,7 +85,7 @@ const ThreadPage = (/* props: Props */) => {
           id="add-reply"
           name="add-reply"
           placeholder="Add a reply"
-          className="flex-grow w-full h-auto min-h-12 rounded-3xl pl-6 pt-3.5 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
+          className="flex-grow w-full min-h-12 h-12 rounded-3xl pl-6 pt-3.5 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
         ></textarea>
         <input
           type="submit"

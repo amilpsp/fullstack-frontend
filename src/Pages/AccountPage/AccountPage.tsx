@@ -1,7 +1,9 @@
 import './AccountPage.css';
 import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
+import { useAuth } from '../../contexts/useAuth';
 
 const AccountPage = () => {
+  const { user } = useAuth();
   /* mockdata */
   const mockdata = [
     {
@@ -71,28 +73,36 @@ const AccountPage = () => {
   return (
     <div>
       {/* Breadcrumbs here */}
+
       <p className="m-1 text-center">/Account</p>
-      <div className="py-4">
-        <h1 className="text-lg cursor-default">My account</h1>
+      {user && (
+        <span>
+          <div className="py-4">
+            <h1 className="text-lg cursor-default">My account</h1>
 
-        <div className="flex my-4">
-          <p className="mt-1.5 cursor-default">
-            Name: <b className="ml-4">John Doe</b>
-          </p>
-          <button className="flex justify-center items-center text-txtbright hover:bg-bordercol border-bordercol border-[1px] rounded-lg w-20 h-8 p-4 text-sm ml-6">
-            Change
-          </button>
-        </div>
-        <p>
-          <u className="cursor-pointer hover:text-white">Change password</u>
-        </p>
+            <div className="flex my-4">
+              <p className="mt-1.5 cursor-default">
+                Name: <b className="ml-4">{user.name}</b>
+              </p>
+              <button className="flex justify-center items-center text-txtbright hover:bg-bordercol border-bordercol border-[1px] rounded-lg w-20 h-8 p-4 text-sm ml-6">
+                Change
+              </button>
+            </div>
+            <p>
+              <u className="cursor-pointer hover:text-white">Change password</u>
+            </p>
 
-        <PostsContainer
-          title={postsContainerInfo.title}
-          image={postsContainerInfo.svg}
-          posts={postsContainerInfo.posts}
-        />
-      </div>
+            <PostsContainer
+              title={postsContainerInfo.title}
+              image={postsContainerInfo.svg}
+              posts={postsContainerInfo.posts}
+            />
+          </div>
+        </span>
+      )}
+      {!user && (
+        <div className="flex text-center m-5">Login to see account info.</div>
+      )}
     </div>
   );
 };
