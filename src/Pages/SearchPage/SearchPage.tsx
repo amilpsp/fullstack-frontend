@@ -3,12 +3,12 @@ import './SearchPage.css';
 
 const SearchPage = () => {
   return (
-    <div className="text-center w-[34vw] text-txtdark">
+    <div className="text-center w-[34vw]">
       {/* Breadcrumbs here */}
-      <p className="m-1">/Search</p>
-      <p className="m-4">Search specific topics:</p>
+      <p className="m-1 text-center">/Search</p>
+      <p className="m-4 text-txtdark">Search specific topics:</p>
       <SmTopicButtons />
-      <p className="m-4">
+      <p className="m-4 text-txtdark">
         Found X threads containing{' '}
         <span className="text-txtbright">"Placeholder"</span> in games
       </p>

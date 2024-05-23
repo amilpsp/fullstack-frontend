@@ -12,12 +12,16 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="relative flex w-full flex-wrap items-center justify-between bg-bgcol border-b-[1px] border-bordercol h-24">
+    <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24 ">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
         {/* LEFT - Logo */}
         <div className="flex ml-16">
           <Link to="" className="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0">
-            <img src="templogo.png" alt="logo" className="max-h-12 me-2" />
+            <img
+              src="templogo.png"
+              alt="logo"
+              className="max-h-12 me-2 drop-shadow-test"
+            />
           </Link>
         </div>
         {/* MIDDLE - Search Bar*/}
@@ -114,7 +118,7 @@ const Navbar: React.FC = () => {
             {isSignupLoginVisible && (
               <div
                 onClick={toggleSignupLogin}
-                className="fixed inset-0 flex items-top justify-center bg-black bg-opacity-50 z-50"
+                className="fixed inset-0 flex items-top justify-center bg-black bg-opacity-60 z-50"
               >
                 <div
                   onClick={(e) => e.stopPropagation()}
