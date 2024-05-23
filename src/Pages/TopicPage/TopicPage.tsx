@@ -88,7 +88,6 @@ const TopicPage = () => {
 	return (
 		<PostsContainer
 			title={threadsContainerInfo.title}
-			/* The title just WON'T CHANGE. It's just "Recent threads" no matter what I do" */
 			image={threadsContainerInfo.svg}
 			posts={posts}
 		/>
