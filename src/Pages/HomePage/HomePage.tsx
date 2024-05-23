@@ -1,9 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
 import "./Homepage.css";
 import axios from "axios";
 
 const HomePage = () => {
+  const [posts, setPosts] = useState<Post[]>([]);
   const categories = [
     {
       name: "games",
@@ -167,6 +168,7 @@ const HomePage = () => {
     try {
       let response = await axios.get("http://localhost:8080/posts");
       console.log(response.data[0]);
+      setPosts(response.data);
     } catch (error) {}
   };
 
@@ -200,7 +202,7 @@ const HomePage = () => {
       <PostsContainer
         title={postsContainerInfo.title}
         image={postsContainerInfo.svg}
-        posts={postsContainerInfo.posts}
+        posts={posts}
       />
     </div>
   );

@@ -1,6 +1,7 @@
 /// <reference types="vite/client" />
 
 interface Post {
+  id: number;
   name: string;
   content: string;
   date: string;
