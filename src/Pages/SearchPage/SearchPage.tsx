@@ -1,10 +1,11 @@
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
 import SmTopicButtons from '../../Components/SmTopicButtons/SmTopicButtons';
 import './SearchPage.css';
 
 const SearchPage = () => {
   return (
-    <div className="text-center w-[34vw]">
-      {/* Breadcrumbs here */}
+    <div className="flex flex-col text-center w-[50vw]">
+      <BreadcrumbsComp />
       <p className="m-1 text-center">/Search</p>
       <p className="m-4 text-txtdark">Search specific topics:</p>
       <SmTopicButtons />

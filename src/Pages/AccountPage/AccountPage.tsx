@@ -1,6 +1,7 @@
 import './AccountPage.css';
 import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
 import { useAuth } from '../../contexts/useAuth';
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
 
 const AccountPage = () => {
   const { user } = useAuth();
@@ -71,10 +72,9 @@ const AccountPage = () => {
   };
 
   return (
-    <div>
-      {/* Breadcrumbs here */}
+    <div className="flex flex-col align-stretch w-[50vw] gap-6">
+      <BreadcrumbsComp />
 
-      <p className="m-1 text-center">/Account</p>
       {user && (
         <span>
           <div className="py-4">
