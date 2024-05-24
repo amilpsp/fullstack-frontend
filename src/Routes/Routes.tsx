@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
       { path: "account", element: <AccountPage /> },
       { path: "search", element: <SearchPage /> },
       { path: "topic/:topicName", element: <TopicPage /> },
-      { path: "thread", element: <ThreadPage /> },
+      { path: "thread/:threadId/:threadName", element: <ThreadPage /> },
       { path: "newThread", element: <NewThread /> },
     ],
   },
