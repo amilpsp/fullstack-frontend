@@ -16,7 +16,7 @@ const NewThread = () => {
         <BreadcrumbsComp />
         <form
           id="newPostForm"
-          className="flex flex-col w-[50vw] p-4 border rounded-md border-bordercol text-txtbright gap-3 "
+          className="flex flex-col w-[50vw] p-4 border rounded-md border-bordercol text-txtdark gap-3"
         >
           <input
             type="text"
@@ -34,13 +34,13 @@ const NewThread = () => {
           ></textarea>
           <section className="flex justify-between gap-2">
             <div className="flex gap-2">
-              <span className="">select a topic:</span>
+              <span className="ml-1 self-center">select a topic:</span>
               <SmTopicButtons />
             </div>
             <input
               type="submit"
               value="Submit"
-              className="bg-bgcol border rounded-md border-bordercol text-txtbright p-2"
+              className="bg-bgcol border rounded-md border-bordercol text-txtbright hover:bg-bordercol w-24 cursor-pointer"
             />
           </section>
         </form>

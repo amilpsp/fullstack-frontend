@@ -28,38 +28,40 @@ const Navbar: React.FC = () => {
         <ul className="flex flex-row mr-16 text-sm">
           <li className="px-4">
             {/* CREATE START */}
-            <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 28 28"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M14 25.6667C20.4434 25.6667 25.6667 20.4433 25.6667 14C25.6667 7.55668 20.4434 2.33334 14 2.33334C7.55672 2.33334 2.33337 7.55668 2.33337 14C2.33337 20.4433 7.55672 25.6667 14 25.6667Z"
-                  stroke="current"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M14 9.33334V18.6667"
-                  stroke="current"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M9.33337 14H18.6667"
-                  stroke="current"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <h3>Create</h3>
-            </button>
+            <Link to="/newThread">
+              <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 28 28"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14 25.6667C20.4434 25.6667 25.6667 20.4433 25.6667 14C25.6667 7.55668 20.4434 2.33334 14 2.33334C7.55672 2.33334 2.33337 7.55668 2.33337 14C2.33337 20.4433 7.55672 25.6667 14 25.6667Z"
+                    stroke="current"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M14 9.33334V18.6667"
+                    stroke="current"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M9.33337 14H18.6667"
+                    stroke="current"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <h3>Create</h3>
+              </button>
+            </Link>
             {/* CREATE END */}
           </li>
           <li className="px-4 hover:fill-white fill-txtbright">

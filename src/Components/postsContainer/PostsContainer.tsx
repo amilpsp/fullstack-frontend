@@ -13,42 +13,44 @@ export const PostsContainer = (props: PostsContainerProps) => {
       <div className="flex items-center mt-10">
         {props.image}
 
-        <h1 className=" text-2xl font-light whitespace-nowrap ">
+        <h1 className=" text-2xl ml-1 font-light whitespace-nowrap ">
           {props.title}
         </h1>
         <div className="border-b border-bordercol flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
-        <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 28 28"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M14 25.6667C20.4434 25.6667 25.6667 20.4433 25.6667 14C25.6667 7.55668 20.4434 2.33334 14 2.33334C7.55672 2.33334 2.33337 7.55668 2.33337 14C2.33337 20.4433 7.55672 25.6667 14 25.6667Z"
-              stroke="current"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M14 9.33334V18.6667"
-              stroke="current"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M9.33337 14H18.6667"
-              stroke="current"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <h3>Create</h3>
-        </button>
+        <Link to="/newThread">
+          <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 28 28"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14 25.6667C20.4434 25.6667 25.6667 20.4433 25.6667 14C25.6667 7.55668 20.4434 2.33334 14 2.33334C7.55672 2.33334 2.33337 7.55668 2.33337 14C2.33337 20.4433 7.55672 25.6667 14 25.6667Z"
+                stroke="current"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M14 9.33334V18.6667"
+                stroke="current"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M9.33337 14H18.6667"
+                stroke="current"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            <h3>Create</h3>
+          </button>
+        </Link>
       </div>
 
       {/* Table */}
@@ -57,7 +59,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
           {/* Titles */}
           <thead className=" border-b border-bordercol justify-between">
             <tr>
-              <th className="font-thin text-xs text-left px-5 py-3 ">POST</th>
+              <th className="font-thin text-xs text-left px-5 py-3 ">THREAD</th>
               <th className="font-thin text-xs text-left pr-5">TOPIC</th>
               <th className="font-thin text-xs text-left pr-5">REPLIES</th>
               <th className="font-thin text-xs text-left pr-5">LAST REPLY</th>
