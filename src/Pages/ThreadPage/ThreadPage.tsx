@@ -1,9 +1,12 @@
+
 import "./ThreadPage.css";
 import Reply from "../../Components/Reply/Reply";
 import "/src/Components/Reply/Reply.tsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+
 
 interface Thread {
   id: number;
@@ -53,14 +56,15 @@ const ThreadPage = () => {
       id="thread-page"
       className="flex flex-col align-stretch w-[50vw] gap-6"
     >
-      {/* Breadcrumbs here */}
+
+      <BreadcrumbsComp />
       {isLoading ? (
         <h1>Loading</h1>
       ) : notFound ? (
         <h1>Thread not found</h1>
       ) : (
         <>
-          <p className="m-1 text-center">/Thread</p>
+          
           <section className="flex flex-col gap-4 ">
             <article
               id="post-body"
