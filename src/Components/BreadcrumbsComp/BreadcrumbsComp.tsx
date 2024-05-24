@@ -5,13 +5,38 @@ import Typography from '@mui/joy/Typography';
 export default function BreadcrumbsComp() {
   return (
     <div className="self-center">
-      <Breadcrumbs aria-label="breadcrumbs">
-        {['Temp', 'Temp'].map((item: string) => (
-          <Link key={item} color="neutral" href="#basics">
+      <Breadcrumbs
+        aria-label="breadcrumbs"
+        sx={{
+          color: '#ffffffc0',
+          padding: '0',
+          margin: '0.5rem',
+          fontSize: '0.9rem'
+        }}
+      >
+        {['temp', 'temp'].map((item: string) => (
+          <Link
+            key={item}
+            href="#basics"
+            sx={{
+              color: '#ffffff66',
+              padding: '2px',
+              marginX: '5px',
+              '&:hover': {
+                color: '#ffffff !important',
+                borderRadius: '8px',
+                padding: '2px',
+                backgroundColor: '#ffffff00 !important',
+                textDecoration: 'none'
+              }
+            }}
+          >
             {item}
           </Link>
         ))}
-        <Typography>You are here</Typography>
+        <Typography>
+          <div className="cursor-default">current</div>
+        </Typography>
       </Breadcrumbs>
     </div>
   );

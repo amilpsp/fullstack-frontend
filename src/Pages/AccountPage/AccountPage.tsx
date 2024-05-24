@@ -77,7 +77,7 @@ const AccountPage = () => {
 
       {user && (
         <span>
-          <div className="py-4">
+          <div className="">
             <h1 className="text-lg cursor-default">My account</h1>
 
             <div className="flex my-4">
@@ -101,7 +101,9 @@ const AccountPage = () => {
         </span>
       )}
       {!user && (
-        <div className="flex text-center m-5">Login to see account info.</div>
+        <div className="flex text-center m-5 text-2xl self-center text-txtbright">
+          <p>{'Login to see account info! >:('}</p>
+        </div>
       )}
     </div>
   );
