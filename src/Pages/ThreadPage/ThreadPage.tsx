@@ -1,6 +1,7 @@
 import './ThreadPage.css';
 import Reply from '../../Components/Reply/Reply';
 import '/src/Components/Reply/Reply.tsx';
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
 /* import { TextField } from "@mui/material";  */
 /* type Props = {
   threadTitle:string;
@@ -56,8 +57,7 @@ const ThreadPage = (/* props: Props */) => {
       id="thread-page"
       className="flex flex-col align-stretch w-[50vw] gap-6"
     >
-      {/* Breadcrumbs here */}
-      <p className="m-1 text-center">/Thread</p>
+      <BreadcrumbsComp />
       <section className="flex flex-col gap-4 ">
         <article
           id="post-body"
