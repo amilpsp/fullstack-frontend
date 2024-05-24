@@ -1,14 +1,14 @@
-import { useEffect, useState } from 'react';
-import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
-import './TopicPage.css';
-import axios from 'axios';
-import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import { useEffect, useState } from "react";
+import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
+import "./TopicPage.css";
+import axios from "axios";
+import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
+import { useParams } from "react-router-dom";
 
-const mockdata = [];
 const TopicPage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
+  const { topicName } = useParams<{ topicName: string }>();
   const threadsContainerInfo = {
-    title: 'Some Specific Topic',
     svg: (
       <svg
         width="30px"
@@ -17,13 +17,13 @@ const TopicPage = () => {
         xmlns="http://www.w3.org/2000/svg"
         fill="#ffffff"
         stroke="#ffffff"
-        stroke-width="0.72"
+        strokeWidth="0.72"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           <defs>
@@ -72,12 +72,13 @@ const TopicPage = () => {
         </g>
       </svg>
     ),
-    posts: mockdata
   };
   const handlePostsFetch = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/posts');
-      console.log(response.data[0]);
+      const response = await axios.get(
+        `http://localhost:8080/posts?topic=${topicName}`
+      );
+
       setPosts(response.data);
     } catch (error) {
       console.log(error);
@@ -89,11 +90,13 @@ const TopicPage = () => {
   return (
     <div className="flex flex-col align-stretch w-[50vw] gap-6">
       <BreadcrumbsComp />
-      <PostsContainer
-        title={threadsContainerInfo.title}
-        image={threadsContainerInfo.svg}
-        posts={posts}
-      />
+      {posts && topicName && (
+        <PostsContainer
+          title={topicName}
+          image={threadsContainerInfo.svg}
+          posts={posts}
+        />
+      )}
     </div>
   );
 };
