@@ -1,3 +1,4 @@
+import "./NewThread.css";
 /* import Button from "@mui/joy/Button";
 import ButtonGroup from "@mui/joy/ButtonGroup"; */
 
