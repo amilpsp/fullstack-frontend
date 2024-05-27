@@ -1,7 +1,7 @@
 import "./ThreadPage.css";
 import Reply from "../../Components/Reply/Reply";
 import "/src/Components/Reply/Reply.tsx";
-import { useEffect, useState } from "react";
+import { SyntheticEvent, useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
@@ -34,12 +34,26 @@ const ThreadPage = () => {
   const [newComment, setNewComment] = useState<string>();
   const { user } = useAuth();
 
-  const handleSendNewComment = async () => {
-    if (!newComment) {
+  const handlePostNewComment = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newComment || !user || !thread?.id) {
       return;
     }
 
-    //send comment to database with username
+    try {
+      const commentData = {
+        author: user.name,
+        threadId: thread.id,
+        content: newComment,
+      };
+
+      await axios.post("http://localhost:8080/comments/add", commentData);
+
+      //fetches thread again to update
+      await handleFetchThread();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleFetchThread = async () => {
@@ -57,9 +71,11 @@ const ThreadPage = () => {
       setIsLoading(false);
     }
   };
+
   useEffect(() => {
     handleFetchThread();
   }, []);
+
   return (
     <div
       id="thread-page"
@@ -98,7 +114,10 @@ const ThreadPage = () => {
           </section>
 
           {user && (
-            <form action="" className="flex gap-2">
+            <form
+              onSubmit={(e) => handlePostNewComment(e)}
+              className="flex gap-2"
+            >
               <textarea
                 id="add-reply"
                 name="add-reply"
