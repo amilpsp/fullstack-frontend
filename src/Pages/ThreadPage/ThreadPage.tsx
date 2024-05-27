@@ -1,12 +1,10 @@
-
 import "./ThreadPage.css";
 import Reply from "../../Components/Reply/Reply";
 import "/src/Components/Reply/Reply.tsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
-
+import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
 
 interface Thread {
   id: number;
@@ -32,6 +30,15 @@ const ThreadPage = () => {
   const [notFound, setNotFound] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { threadId } = useParams<{ threadId: string }>();
+  const [newComment, setNewComment] = useState<string>();
+
+  const handleSendNewComment = async () => {
+    if (!newComment) {
+      return;
+    }
+
+    //send comment to database with username
+  };
 
   const handleFetchThread = async () => {
     try {
@@ -56,7 +63,6 @@ const ThreadPage = () => {
       id="thread-page"
       className="flex flex-col align-stretch w-[50vw] gap-6"
     >
-
       <BreadcrumbsComp />
       {isLoading ? (
         <h1>Loading</h1>
@@ -64,7 +70,6 @@ const ThreadPage = () => {
         <h1>Thread not found</h1>
       ) : (
         <>
-          
           <section className="flex flex-col gap-4 ">
             <article
               id="post-body"
@@ -96,6 +101,7 @@ const ThreadPage = () => {
               name="add-reply"
               placeholder="Add a reply"
               className="flex-grow w-full min-h-12 h-12 rounded-3xl pl-6 pt-3.5 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
+              onChange={(e) => setNewComment(e.target.value)}
             ></textarea>
             <input
               type="submit"
@@ -136,7 +142,7 @@ const ThreadPage = () => {
                     />
                   </defs>
                 </svg>
-                {/* props.replyAmount */} <p>X replies</p>
+                <p>{thread?.comments.length} replies</p>
                 <div className="border-b border-bordercol flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
               </div>
             </div>
