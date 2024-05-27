@@ -1,9 +1,6 @@
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode } from "react";
 
 // Define types for user and context
-interface User {
-  name: string;
-}
 
 export interface AuthContextType {
   user: User | null;
@@ -25,7 +22,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
   const login = (userData: User) => {
-    console.log('Logging in user:', userData); // Log user data
+    console.log("Logging in user:", userData); // Log user data
     setUser(userData);
   };
 
