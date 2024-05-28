@@ -1,7 +1,7 @@
 import "./ThreadPage.css";
 import Reply from "../../Components/Reply/Reply";
 import "/src/Components/Reply/Reply.tsx";
-import { SyntheticEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
