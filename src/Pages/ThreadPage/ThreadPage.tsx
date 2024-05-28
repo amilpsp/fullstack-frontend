@@ -34,7 +34,7 @@ const ThreadPage = () => {
   const [newComment, setNewComment] = useState<string>();
   const { user } = useAuth();
 
-  const handlePostNewComment = async (e: React.FormEvent) => {
+  const handlePostNewComment = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     if (!newComment || !user || !thread?.id) {
       return;
