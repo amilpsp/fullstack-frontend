@@ -16,9 +16,9 @@ const NewThread = () => {
   const handlePostNewThread = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const postData = {
-      author: "anubisto",
-      forum: "animals",
-      title: "4th post!",
+      author: "creycreycrey",
+      forum: "games",
+      title: "5th post!",
       content: "hello there",
     };
     try {
