@@ -1,15 +1,33 @@
-import './NewThread.css';
+import "./NewThread.css";
 /* import Button from "@mui/joy/Button";
 import ButtonGroup from "@mui/joy/ButtonGroup"; */
 
-import SmTopicButtons from '../../Components/SmTopicButtons/SmTopicButtons';
-import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import SmTopicButtons from "../../Components/SmTopicButtons/SmTopicButtons";
+import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
+import axios from "axios";
+import React from "react";
 const NewThread = () => {
   /* const [selectedTopic, setSelectedTopic] = React.useState(-1);
 	const handleClick = () => {
 		console.log("hello there");
 		return "hello there";
 	}; */
+
+  const handlePostNewThread = async (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const postData = {
+      author: "creycreycrey",
+      forum: "games",
+      title: "5th post!",
+      content: "hello there",
+    };
+    try {
+      await axios.post("http://localhost:8080/posts/add", postData);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col align-stretch w-[50vw] gap-6">
@@ -17,6 +35,7 @@ const NewThread = () => {
         <form
           id="newPostForm"
           className="flex flex-col w-[50vw] p-4 border rounded-md border-bordercol text-txtdark gap-3"
+          onSubmit={(e) => handlePostNewThread(e)}
         >
           <input
             type="text"

@@ -136,7 +136,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
                   </td>
                   <td className="py-2 pr-5">
                     <h3 className=" whitespace-nowrap">
-                      {post.lastReply.name}
+                      {post.lastReply.author}
                     </h3>
                     <h4 className=" whitespace-nowrap text-txtdark">
                       {post.lastReply.date}
@@ -146,9 +146,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
                     </h4>
                   </td>
                   <td className="pr-5 py-2">
-                    <h3 className=" whitespace-nowrap">
-                      {post.originalPoster}
-                    </h3>
+                    <h3 className=" whitespace-nowrap">{post.author}</h3>
                     <h4 className=" whitespace-nowrap text-txtdark">
                       {post.date}
                     </h4>
