@@ -23,14 +23,14 @@ const NewThread = () => {
             name="Title"
             id="Title"
             placeholder="Title"
-            className="bg-bgcol border rounded-md border-bordercol text-txtbright w-[50%] text-xl p-2"
+            className="flex-grow text-xl rounded-lg w-[50%] pl-4 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
           />
           <textarea
             name="content"
             id="content"
             rows={6}
             placeholder="Write about something..."
-            className="bg-bgcol border rounded-md border-bordercol text-txtbright p-2"
+            className="flex-grow  rounded-lg pl-4 pt-4 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
           ></textarea>
           <section className="flex justify-between gap-2">
             <div className="flex gap-2">
@@ -40,7 +40,7 @@ const NewThread = () => {
             <input
               type="submit"
               value="Submit"
-              className="bg-bgcol border rounded-md border-bordercol text-txtbright hover:bg-bordercol w-24 cursor-pointer"
+              className="bg-odark border rounded-md border-bordercol text-txtbright hover:bg-bordercol w-24 cursor-pointer"
             />
           </section>
         </form>
