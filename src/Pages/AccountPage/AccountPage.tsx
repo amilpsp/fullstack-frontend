@@ -1,48 +1,16 @@
-import './AccountPage.css';
-import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
-import { useAuth } from '../../contexts/useAuth';
-import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import "./AccountPage.css";
+import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
+import { useAuth } from "../../contexts/useAuth";
+import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const AccountPage = () => {
   const { user } = useAuth();
-  /* mockdata */
-  const mockdata = [
-    {
-      id: 1,
-      name: 'Lorem Ipsum',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
-      date: 'January 1, 2000',
-      time: '10:11',
-      originalPoster: 'John Doe',
-      topic: 'games',
-      replies: 3,
-      lastReply: {
-        name: 'Jane Doe',
-        date: 'January 2, 2001',
-        time: '10:27'
-      }
-    },
-    {
-      id: 2,
-      name: 'Lorem Ipsum',
-      content:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua dolor sit amet',
-      date: 'January 5, 2003',
-      time: '10:22',
-      originalPoster: 'John Doe',
-      topic: 'animals',
-      replies: 20,
-      lastReply: {
-        name: 'Jane Doe',
-        date: 'January 5, 2022',
-        time: '12:29'
-      }
-    }
-  ];
-  /* mockdata end */
+  const [posts, setPosts] = useState<Post[]>([]);
+
   const postsContainerInfo = {
-    title: 'My threads',
+    title: "My threads",
     svg: (
       <svg
         width="30"
@@ -68,8 +36,28 @@ const AccountPage = () => {
         </defs>
       </svg>
     ),
-    posts: mockdata
+    posts: posts,
   };
+
+  const handleFetchUserThreads = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/users/${user?.name}`
+      );
+
+      setPosts(response.data.posts);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    handleFetchUserThreads();
+  }, [user]);
+
+  useEffect(() => {
+    handleFetchUserThreads();
+  }, []);
 
   return (
     <div className="flex flex-col align-stretch w-[50vw] gap-6">
@@ -102,7 +90,7 @@ const AccountPage = () => {
       )}
       {!user && (
         <div className="flex text-center m-5 text-2xl self-center text-txtbright">
-          <p>{'Login to see account info! >:('}</p>
+          <p>{"Login to see account info! >:("}</p>
         </div>
       )}
     </div>
