@@ -1,8 +1,13 @@
+import { Link, useLocation } from 'react-router-dom';
 import Breadcrumbs from '@mui/joy/Breadcrumbs';
-import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 
-export default function BreadcrumbsComp() {
+const BreadcrumbsComp = () => {
+  const location = useLocation();
+  const pathnames = location.pathname
+    .split('/')
+    .filter((x) => x && isNaN(Number(x)));
+
   return (
     <div className="self-center">
       <Breadcrumbs
@@ -14,30 +19,27 @@ export default function BreadcrumbsComp() {
           fontSize: '0.9rem'
         }}
       >
-        {['temp', 'temp'].map((item: string) => (
-          <Link
-            key={item}
-            href="#basics"
-            sx={{
-              color: '#ffffff66',
-              padding: '2px',
-              marginX: '5px',
-              '&:hover': {
-                color: '#ffffff !important',
-                borderRadius: '8px',
-                padding: '2px',
-                backgroundColor: '#ffffff00 !important',
-                textDecoration: 'none'
-              }
-            }}
-          >
-            {item}
-          </Link>
-        ))}
-        <Typography>
-          <div className="cursor-default">current</div>
-        </Typography>
+        {pathnames.map((pathname, index) => {
+          const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+          const isLast = index === pathnames.length - 1;
+
+          return (
+            <Typography key={pathname}>
+              {isLast ? (
+                <div className="cursor-default font-bold text-white">
+                  {pathname}
+                </div>
+              ) : (
+                <Link to={routeTo} className="text-txtdark">
+                  {pathname}
+                </Link>
+              )}
+            </Typography>
+          );
+        })}
       </Breadcrumbs>
     </div>
   );
-}
+};
+
+export default BreadcrumbsComp;
