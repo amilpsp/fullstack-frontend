@@ -6,6 +6,7 @@ import SearchPage from "../Pages/SearchPage/SearchPage";
 import TopicPage from "../Pages/TopicPage/TopicPage";
 import ThreadPage from "../Pages/ThreadPage/ThreadPage";
 import NewThread from "../Pages/NewThread/NewThread";
+import { UserPage } from "../Pages/UserPage/UserPage";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,7 @@ export const router = createBrowserRouter([
       { path: "topic/:topicName", element: <TopicPage /> },
       { path: "thread/:threadId/:threadName", element: <ThreadPage /> },
       { path: "newThread", element: <NewThread /> },
+      { path: "user/:username", element: <UserPage /> },
     ],
   },
 ]);

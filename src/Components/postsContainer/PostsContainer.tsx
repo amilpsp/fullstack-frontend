@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from "react-router-dom";
 
 type PostsContainerProps = {
   title: string;
@@ -7,6 +7,12 @@ type PostsContainerProps = {
 };
 
 export const PostsContainer = (props: PostsContainerProps) => {
+  const navigate = useNavigate();
+
+  const handlePostNavigation = (threadId: number, threadName: string) => {
+    const formattedThreadName = threadName.replace(" ", "-");
+    navigate(`/thread/${threadId}/${formattedThreadName}`);
+  };
   return (
     <div className=" max-w-[50vw] mx-auto">
       {/* Title */}
@@ -76,6 +82,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
                 <tr
                   key={index}
                   className=" border-b border-bordercol hover:bg-bordercol cursor-pointer"
+                  onClick={() => handlePostNavigation(post.id, post.name)}
                 >
                   <td className="p-5 py-2">
                     <Link to="/thread">
@@ -85,7 +92,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
                     <p className="text-txtdark">
                       {post.content.length < 125
                         ? post.content
-                        : post.content.slice(0, 125) + '...'}
+                        : post.content.slice(0, 125) + "..."}
                     </p>
                   </td>
                   <td className=" py-2 pr-5">{post.topic}</td>
