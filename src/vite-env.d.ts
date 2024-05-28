@@ -5,11 +5,11 @@ interface Post {
   content: string;
   date: string;
   time: string;
-  originalPoster: string;
+  author: string;
   topic: string;
   replies: number;
   lastReply: {
-    name: string;
+    author: string;
     date: string;
     time: string;
   };
