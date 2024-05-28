@@ -1,35 +1,38 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SignupLogin from '../SignupLogin/SignupLogin';
 import SideBarTopics from '../SideBarTopics/SideBarTopics';
-/* import { useAuth } from '../../contexts/useAuth'; */
 
 const Navbar: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleSearch = (query: string) => {
+    navigate(`/search?query=${query}`);
+  };
+
   return (
-    <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24 ">
+    <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
         {/* LEFT - Logo */}
         <div className="flex ml-16">
           <Link to="" className="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0">
             <img
-              src="templogo.png"
+              src="logo.png"
               alt="logo"
-              className="max-h-12 me-2 drop-shadow-test"
+              className="max-h-12 me-2 drop-shadow-blue hover:drop-shadow-red transition-transform duration-75"
             />
           </Link>
         </div>
         {/* MIDDLE - Search Bar*/}
         <div className="mx-auto flex-row ps-0 md:flex">
-          <SearchBar />
+          <SearchBar onSearch={handleSearch} />
         </div>
-
         {/* RIGHT - Create, My Threads, Login */}
         <ul className="flex flex-row mr-16 text-sm">
           <li className="px-4">
-            {/* CREATE START */}
             <Link to="/newThread">
-              <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12">
+              <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12 hover:drop-shadow-test">
                 <svg
                   width="20"
                   height="20"
@@ -62,17 +65,13 @@ const Navbar: React.FC = () => {
                 <h3>Create</h3>
               </button>
             </Link>
-            {/* CREATE END */}
           </li>
           <li className="px-4 hover:fill-white fill-txtbright">
-            {/* LOGIN START */}
             <SignupLogin />
-            {/* LOGIN END */}
           </li>
         </ul>
       </div>
       <SideBarTopics />
-      {/* ^temp */}
     </nav>
   );
 };

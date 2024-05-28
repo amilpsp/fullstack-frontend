@@ -115,7 +115,7 @@ const SignupLogin: React.FC = () => {
         <div>
           <button
             onClick={toggleSignupLogin}
-            className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12"
+            className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12  hover:drop-shadow-test"
           >
             <svg
               width="30px"
@@ -136,7 +136,7 @@ const SignupLogin: React.FC = () => {
           {isSignupLoginVisible && (
             <div
               onClick={toggleSignupLogin}
-              className="fixed inset-0 flex items-top justify-center bg-black bg-opacity-60 z-50"
+              className="fixed inset-0 flex items-top justify-center bg-black bg-opacity-70 z-50"
             >
               <div
                 onClick={(e) => e.stopPropagation()}

@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
-import "./TopicPage.css";
-import axios from "axios";
-import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
+import './TopicPage.css';
+import axios from 'axios';
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import { useParams } from 'react-router-dom';
 
 const TopicPage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -71,7 +71,7 @@ const TopicPage = () => {
           ></path>
         </g>
       </svg>
-    ),
+    )
   };
   const handlePostsFetch = async () => {
     try {

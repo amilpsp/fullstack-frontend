@@ -1,0 +1,15 @@
+<svg
+              version="1.1"
+              id="Layer_2"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 42 42"
+              className="h-[1rem] mr-2 ml-2 fill-txtbright"
+            >
+              <style type="text/css"></style>
+              <polygon
+                points="41,13 27,13 27,7 23,7 23,1 19,1 19,7 15,7 15,13 1,13 1,21 5,21 5,25 9,25 9,31 5,31 5,35.8 5,37
+	5,41 13,41 13,37 19,37 19,33 23,33 23,37 29,37 29,41 37,41 37,37 37,35 37,31 33,31 33,25 37,25 37,21 41,21 "
+              />
+            </svg>

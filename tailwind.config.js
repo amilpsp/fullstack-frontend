@@ -34,7 +34,9 @@ export default {
         180: '32rem'
       },
       dropShadow: {
-        test: '0 0px 10px rgba(170, 200, 255, 0.25)'
+        test: '0 0px 10px rgba(170, 200, 255, 0.25)',
+        red: '0 0px 12px rgba(255, 200, 200, 0.25)',
+        blue: '0 0px 12px rgba(200, 200, 255, 0.25)'
       },
       boxShadow: {
         test: '0 0px 25px 0 rgba(255, 255, 255, 0.05)',

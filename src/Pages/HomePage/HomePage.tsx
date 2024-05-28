@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const HomePage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
-  const categories = [
+  /* const categories = [
     {
       name: 'games',
       svg: (
@@ -99,7 +99,7 @@ const HomePage = () => {
         </svg>
       )
     }
-  ];
+  ]; */
 
   const mockdata = [
     {
@@ -137,30 +137,23 @@ const HomePage = () => {
   ];
 
   const postsContainerInfo = {
-    title: 'Recent threads',
+    title: 'All threads',
     svg: (
       <svg
-        width="30"
-        height="30"
-        viewBox="0 0 38 38"
-        fill="none"
+        version="1.1"
+        id="Layer_2"
         xmlns="http://www.w3.org/2000/svg"
-        className="mx-2"
+        x="0px"
+        y="0px"
+        viewBox="0 0 42 42"
+        className="h-[1.5rem] mr-2 ml-2 fill-txtbright"
       >
-        <g clipPath="url(#clip0_4_266)">
-          <path
-            d="M38 19.1H30.4L24.7 36.2L13.3 2L7.6 19.1H0"
-            stroke="#CFCFCF"
-            strokeWidth="5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_4_266">
-            <rect width="38" height="38" fill="white" />
-          </clipPath>
-        </defs>
+        <style type="text/css"></style>
+        <polygon
+          points="38.2,1 36,1 21,1 21,6 31,6 31,11 27.4,11 26,11 26,16 22.9,16 21,16 21,21.1 18,21.1 16,21.1 16,26.1
+13,26.1 10.9,26.1 10.9,31.1 7.6,31.1 5.9,31.1 5.9,36.1 0.9,36.1 0.9,41 10.9,41 10.9,38.5 10.9,36.1 16,36.1 16,33.6 16,31.1
+21,31.1 21,29 21,26.1 26,26.1 26,22.6 26,21.1 31,21.1 31,17.6 31,16 36,16 36,26.1 41.1,26.1 41.1,16 41.1,11 41.1,1 "
+        />
       </svg>
     ),
     posts: mockdata
@@ -182,7 +175,7 @@ const HomePage = () => {
 
   return (
     <div className="">
-      <nav className="flex justify-center">
+      {/* <nav className="flex justify-center">
         <ul className="flex gap-5">
           <li
             key={'all'}
@@ -202,7 +195,7 @@ const HomePage = () => {
             );
           })}
         </ul>
-      </nav>
+      </nav> */}
       <PostsContainer
         title={postsContainerInfo.title}
         image={postsContainerInfo.svg}

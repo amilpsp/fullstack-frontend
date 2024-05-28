@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 
 type PostsContainerProps = {
   title: string;
@@ -10,7 +10,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
   const navigate = useNavigate();
 
   const handlePostNavigation = (threadId: number, threadName: string) => {
-    const formattedThreadName = threadName.replace(" ", "-");
+    const formattedThreadName = threadName.replace(' ', '-');
     navigate(`/thread/${threadId}/${formattedThreadName}`);
   };
   return (
@@ -19,7 +19,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
       <div className="flex items-center mt-10">
         {props.image}
 
-        <h1 className=" text-2xl ml-1 font-light whitespace-nowrap ">
+        <h1 className=" text-2xl ml-1 font-light whitespace-nowrap">
           {props.title}
         </h1>
         <div className="border-b border-bordercol flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
@@ -89,10 +89,10 @@ export const PostsContainer = (props: PostsContainerProps) => {
                       {/* temp for navigating the webpage */}
                       <h3>{post.name}</h3>
                     </Link>
-                    <p className="text-txtdark">
+                    <p className="text-txtdark ">
                       {post.content.length < 125
                         ? post.content
-                        : post.content.slice(0, 125) + "..."}
+                        : post.content.slice(0, 125) + '...'}
                     </p>
                   </td>
                   <td className=" py-2 pr-5">{post.topic}</td>
