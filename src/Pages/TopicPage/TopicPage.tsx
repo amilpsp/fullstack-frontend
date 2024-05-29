@@ -1,13 +1,14 @@
-import { useEffect, useState } from 'react';
-import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
-import './TopicPage.css';
-import axios from 'axios';
-import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
-import { useParams } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
+import "./TopicPage.css";
+import axios from "axios";
+import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
+import { useLocation, useParams } from "react-router-dom";
 
 const TopicPage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
   const { topicName } = useParams<{ topicName: string }>();
+  const { pathname } = useLocation();
   const threadsContainerInfo = {
     svg: (
       <svg
@@ -71,7 +72,7 @@ const TopicPage = () => {
           ></path>
         </g>
       </svg>
-    )
+    ),
   };
   const handlePostsFetch = async () => {
     try {
@@ -87,6 +88,10 @@ const TopicPage = () => {
   useEffect(() => {
     handlePostsFetch();
   }, []);
+
+  useEffect(() => {
+    handlePostsFetch();
+  }, [pathname]);
   return (
     <div className="flex flex-col align-stretch w-[50vw] gap-6">
       <BreadcrumbsComp />
