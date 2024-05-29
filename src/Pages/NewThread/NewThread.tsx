@@ -1,25 +1,24 @@
-import "./NewThread.css";
+import './NewThread.css';
 /* import Button from "@mui/joy/Button";
 import ButtonGroup from "@mui/joy/ButtonGroup"; */
 
-import SmTopicButtons from "../../Components/SmTopicButtons/SmTopicButtons";
-import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
-import axios from "axios";
-import React from "react";
-import { useAuth } from "../../contexts/useAuth";
+import SmTopicButtons from '../../Components/SmTopicButtons/SmTopicButtons';
+import axios from 'axios';
+import React from 'react';
+import { useAuth } from '../../contexts/useAuth';
 const NewThread = () => {
   const { user } = useAuth();
 
   const handlePostNewThread = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const postData = {
-      author: "creycreycrey",
-      forum: "games",
-      title: "5th post!",
-      content: "hello there",
+      author: 'creycreycrey',
+      forum: 'games',
+      title: '5th post!',
+      content: 'hello there'
     };
     try {
-      await axios.post("http://localhost:8080/posts/add", postData);
+      await axios.post('http://localhost:8080/posts/add', postData);
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +27,6 @@ const NewThread = () => {
   return (
     <>
       <div className="flex flex-col align-stretch w-[50vw] gap-6">
-        <BreadcrumbsComp />
         {user ? (
           <form
             id="newPostForm"
@@ -62,7 +60,12 @@ const NewThread = () => {
             </section>
           </form>
         ) : (
-          <div>Log in to create a thread</div>
+          <div className="text-center">
+            <p>Log in to create a thread</p>
+            <p>
+              <b>ADD A LOCK GRAPHIC MAYBE WITH ARROW TO TOP RIGHT</b>
+            </p>
+          </div>
         )}
       </div>
     </>
