@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
-/* import SmTopicButtons from '../../Components/SmTopicButtons/SmTopicButtons'; */
 import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
 import './SearchPage.css';
 
@@ -60,7 +58,6 @@ const SearchPage = () => {
 
   return (
     <div className="flex flex-col w-[50vw]">
-      <BreadcrumbsComp />
       <div className="text-center">
         {/* <p className="m-4 text-txtdark">Search specific topics:</p>
         <SmTopicButtons /> */}

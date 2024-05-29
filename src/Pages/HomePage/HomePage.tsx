@@ -175,27 +175,6 @@ const HomePage = () => {
  */
   return (
     <div className="">
-      {/* <nav className="flex justify-center">
-        <ul className="flex gap-5">
-          <li
-            key={'all'}
-            className="border flex items-center px-7 py-4 rounded-lg text-lg border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test bg-odark"
-          >
-            all
-          </li>
-          {categories.map((category) => {
-            return (
-              <li
-                key={category.name}
-                className="flex gap-2 items-center border px-7 py-2.5 rounded-lg text-xl border-bordercol text-center hover:cursor-pointer hover:bg-bordercol hover:shadow-test bg-odark"
-              >
-                {category.svg}
-                {category.name}
-              </li>
-            );
-          })}
-        </ul>
-      </nav> */}
       <img
         src="hero2.png"
         alt="cityscape"
