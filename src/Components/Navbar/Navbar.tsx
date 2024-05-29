@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
         <div className="flex ml-16">
           <Link to="" className="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0">
             <img
-              src="logo2.png"
+              src="logo.png"
               alt="logo"
               className="max-h-12 me-2 drop-shadow-blue hover:drop-shadow-red transition-transform duration-75"
             />
