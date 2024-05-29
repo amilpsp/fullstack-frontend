@@ -1,14 +1,14 @@
-import React, { useContext, useState, FormEvent } from 'react';
-import Tabs from '@mui/joy/Tabs';
-import TabList from '@mui/joy/TabList';
-import Tab from '@mui/joy/Tab';
-import TabPanel from '@mui/joy/TabPanel';
-import Menu from '@mui/joy/Menu';
-import MenuButton from '@mui/joy/MenuButton';
-import MenuItem from '@mui/joy/MenuItem';
-import Dropdown from '@mui/joy/Dropdown';
-import { AuthContext, AuthContextType } from '../../contexts/AuthContext';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState, FormEvent } from "react";
+import Tabs from "@mui/joy/Tabs";
+import TabList from "@mui/joy/TabList";
+import Tab from "@mui/joy/Tab";
+import TabPanel from "@mui/joy/TabPanel";
+import Menu from "@mui/joy/Menu";
+import MenuButton from "@mui/joy/MenuButton";
+import MenuItem from "@mui/joy/MenuItem";
+import Dropdown from "@mui/joy/Dropdown";
+import { AuthContext, AuthContextType } from "../../contexts/AuthContext";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const SignupLogin: React.FC = () => {
@@ -20,7 +20,8 @@ const SignupLogin: React.FC = () => {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	/* const [loggedIn, setLoggedIn] = useState(false)
   const [registered, setRegistered] = useState(false) */
-
+	/* 	const [storedData, setStoredData] = useState([]);
+	 */
 	//To let display success/failure messages after the attempt
 
 	const authContext = useContext<AuthContextType | undefined>(AuthContext);
@@ -30,6 +31,20 @@ const SignupLogin: React.FC = () => {
 	}
 
 	const { login, user, logout } = authContext;
+	/* const handleLogoutClick =(id:number,token)=>{
+    const logoutConfig = {
+			method: "delete",
+			url: "http://localhost:8080/login",
+			data: { user_id:id, token:token },
+		};
+		axios(logoutConfig)
+			.then(() => {
+				logout()
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+  } */
 
 	/* The following two functions could be optimized, it's spaghetti code only for now (Amanda)*/
 
@@ -46,14 +61,13 @@ const SignupLogin: React.FC = () => {
 		};
 		axios(loginConfig)
 			.then((result) => {
-				console.log(result);
+				localStorage.setItem("userLogged", JSON.stringify(result.data));
+				login({ name: username });
+				console.log(result.data);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-
-		const userData = { name: username };
-		login(userData);
 	};
 
 	const handleSignUpSubmit = (e: FormEvent) => {
@@ -69,17 +83,13 @@ const SignupLogin: React.FC = () => {
 		};
 		axios(signupConfig)
 			.then((result) => {
-				console.log(result);
+				localStorage.setItem("userLogged", JSON.stringify(result.data));
+				login({ name: newUsername });
+				console.log(result.data);
 			})
 			.catch((error) => {
 				console.log(error);
 			});
-
-		const userData = {
-			name: newUsername,
-			password: newPassword,
-		};
-		login(userData);
 	};
 
 	const [isSignupLoginVisible, setSignupLoginVisible] = useState(false);
