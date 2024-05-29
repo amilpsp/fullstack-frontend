@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
+/* import { useEffect, useState } from 'react';
 import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
 import './Homepage.css';
-import axios from 'axios';
+import axios from 'axios'; */
 
 const HomePage = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
+  /* const [posts, setPosts] = useState<Post[]>([]); */
   /* const categories = [
     {
       name: 'games',
@@ -101,7 +101,7 @@ const HomePage = () => {
     }
   ]; */
 
-  const mockdata = [
+  /*   const mockdata = [
     {
       id: 1,
       name: 'Lorem Ipsum',
@@ -172,7 +172,7 @@ const HomePage = () => {
   useEffect(() => {
     handlePostsFetch();
   }, []);
-
+ */
   return (
     <div className="">
       {/* <nav className="flex justify-center">
@@ -196,11 +196,16 @@ const HomePage = () => {
           })}
         </ul>
       </nav> */}
-      <PostsContainer
+      <img
+        src="hero2.png"
+        alt="cityscape"
+        className="w-[100%] max-w-[80vw] max-h-[60vh] mt-5"
+      />
+      {/* <PostsContainer
         title={postsContainerInfo.title}
         image={postsContainerInfo.svg}
         posts={posts}
-      />
+      /> */}
     </div>
   );
 };

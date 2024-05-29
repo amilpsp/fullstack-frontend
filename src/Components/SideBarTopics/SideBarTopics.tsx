@@ -56,7 +56,7 @@ export default function SignupLogin() {
               x="0px"
               y="0px"
               viewBox="0 0 42 42"
-              className="h-[1rem] mr-2 ml-2 fill-txtbright"
+              className="h-[1rem] mr-2 ml-2 fill-txtbright "
             >
               <style type="text/css"></style>
               <polygon
