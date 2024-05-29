@@ -29,7 +29,8 @@ export default {
         fb2: '#1847A7'
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif']
+        sans: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans']
       },
       spacing: {
         180: '32rem'
