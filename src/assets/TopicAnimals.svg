@@ -1,0 +1,16 @@
+<svg
+              version="1.1"
+              id="Layer_2_1_"
+              xmlns="http://www.w3.org/2000/svg"
+              x="0px"
+              y="0px"
+              viewBox="0 0 42 42"
+              className="h-[1rem] mr-2 ml-2 fill-txtbright"
+            >
+              <style type="text/css"></style>
+              <path
+                d="M40.1,28.8V13.2h-3.5V1h-5.2v3.5H28v3.4H14V4.5h-3.5V1H5.3v12.2H1.9v15.6h3.4V34H2v3.4h3.4v-3.3h5.1v3.4H7.1V41
+	h3.5v-3.5h20.6v3.4h3.5v-3.5h-3.4v-3.3h5.1v3.4h3.5V34h-3.4v-5.2H40.1z M15.8,21.8h-3.6v-3.5h3.6V21.8z M22.7,28.8v5.3h-3.6v-5.3
+	h-1.7v-3.5h7v3.5H22.7z M29.7,21.8h-3.6v-3.5h3.6V21.8z"
+              />
+            </svg>
