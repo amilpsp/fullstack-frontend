@@ -63,8 +63,8 @@ const SignupLogin: React.FC = () => {
 			method: "post",
 			url: "http://localhost:8080/signup",
 			data: {
-				newUsername,
-				newPassword,
+				username: newUsername,
+				password: newPassword,
 			},
 		};
 		axios(signupConfig)
