@@ -7,7 +7,7 @@ export interface AuthContextType {
 	user: User | null;
 	signup: (userData: User) => void;
 	login: (userData: User) => void;
-	logout: () => void;
+	logout: (userData: User) => void;
 }
 
 // Create the context
@@ -54,7 +54,20 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 		setUser(userData);
 	};
 
-	const logout = () => {
+	const logout = async () => {
+		const logoutConfig = {
+			method: "delete",
+			url: "http://localhost:8080/login",
+			data: { user },
+		};
+		try {
+			await axios(logoutConfig);
+		} catch (error) {
+			console.log(
+				"wasn't able to remove the logged in session from the database"
+			);
+		}
+		localStorage.removeItem("userLogged");
 		setUser(null);
 	};
 
