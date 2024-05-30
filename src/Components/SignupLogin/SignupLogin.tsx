@@ -14,7 +14,6 @@ import ModalClose from "@mui/joy/ModalClose";
 import Sheet from "@mui/joy/Sheet";
 import { AuthContext, AuthContextType } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
-import axios from "axios";
 
 const SignupLogin: React.FC = () => {
 	const [activeTab, setActiveTab] = useState<number>(0);
