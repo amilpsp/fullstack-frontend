@@ -38,8 +38,8 @@ const NewThread = () => {
         "http://localhost:8080/posts/add",
         postData
       );
-
-      navigate(`/thread/${response.data.id}/${postData.title}`);
+      const formattedThreadName = postData.title?.replace(" ", "-");
+      navigate(`/thread/${response.data.id}/${formattedThreadName}`);
     } catch (error) {
       console.log(error);
     }
