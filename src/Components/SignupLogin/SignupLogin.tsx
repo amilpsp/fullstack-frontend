@@ -9,6 +9,9 @@ import MenuButton from '@mui/joy/MenuButton';
 import MenuItem from '@mui/joy/MenuItem';
 import Dropdown from '@mui/joy/Dropdown';
 import Alert from '@mui/joy/Alert';
+import Modal from '@mui/joy/Modal';
+import ModalClose from '@mui/joy/ModalClose';
+import Sheet from '@mui/joy/Sheet';
 import { AuthContext, AuthContextType } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -24,6 +27,7 @@ const SignupLogin: React.FC = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
   const [loginError, setLoginError] = useState<string | null>(null);
+  const [open, setOpen] = React.useState<boolean>(false);
   /* const [loggedIn, setLoggedIn] = useState(false)
   const [registered, setRegistered] = useState(false) */
   /* 	const [storedData, setStoredData] = useState([]);
@@ -104,7 +108,7 @@ const SignupLogin: React.FC = () => {
         setFadeOut(false); // Reset fade-out for next alert
       }, 3000);
     } catch (error) {
-      setSignupError('Account name must be unique.'); // Set error message
+      setSignupError('Username already exists.'); // Set error message
       setSignupLoginVisible(true);
     }
   };
@@ -139,8 +143,55 @@ const SignupLogin: React.FC = () => {
     return username.trim() !== '' && password.trim() !== '';
   };
 
+  const handleLogout = () => {
+    logout();
+    setOpen(false);
+  };
+
   return (
     <div>
+      <Modal
+        aria-labelledby="modal-title"
+        aria-describedby="modal-desc"
+        open={open}
+        onClose={() => setOpen(false)}
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <Sheet
+          variant="outlined"
+          sx={{
+            width: 346,
+            borderRadius: 'md',
+            p: 3,
+            boxShadow: 'lg',
+            backgroundColor: '#000000CC',
+            borderColor: '#ffffff0f'
+          }}
+        >
+          <h2 className="text-txtdark mb-2">
+            Are you sure you want to logout?
+          </h2>
+          <div className="flex justify-center gap-6 p-3">
+            <button
+              onClick={handleLogout}
+              className="px-4 py-2 border-bordercol border-[1px] text-red-500 rounded-lg hover:opacity-80 hover:bg-bordercol"
+            >
+              Logout
+            </button>
+            <button
+              onClick={() => setOpen(false)}
+              className="px-4 py-2 bg-odark border-bordercol border-[1px] text-white rounded-lg hover:bg-bordercol"
+            >
+              Close
+            </button>
+          </div>
+          <ModalClose variant="plain" sx={{ m: 1 }} />
+        </Sheet>
+      </Modal>
       {showAlert && (
         <div
           className={`fixed top-1 left-1/2 transform -translate-x-1/2 mt-4 z-50 ${fadeOut ? 'fade-out' : ''}`}
@@ -210,22 +261,24 @@ const SignupLogin: React.FC = () => {
               >
                 <Link to="/account">My threads</Link>
               </MenuItem>
-              <button onClick={logout}>
-                <MenuItem
-                  sx={{
-                    color: '#ffffffc0',
-                    marginX: '5px',
-                    '&:hover': {
-                      color: '#ffffff !important',
-                      borderRadius: '8px',
+              {
+                <button onClick={() => setOpen(true)}>
+                  <MenuItem
+                    sx={{
+                      color: '#ffffffc0',
                       marginX: '5px',
-                      backgroundColor: '#ffffff0f !important'
-                    }
-                  }}
-                >
-                  Logout
-                </MenuItem>
-              </button>
+                      '&:hover': {
+                        color: '#F26969 !important',
+                        borderRadius: '8px',
+                        marginX: '5px',
+                        backgroundColor: '#ffffff0f !important'
+                      }
+                    }}
+                  >
+                    Logout
+                  </MenuItem>
+                </button>
+              }
             </Menu>
           </Dropdown>
         </div>
