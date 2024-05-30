@@ -7,7 +7,7 @@ export interface AuthContextType {
 	user: User | null;
 	signup: (userData: User) => void;
 	login: (userData: User) => void;
-	logout: (userData: User) => void;
+	logout: () => void;
 }
 
 // Create the context
