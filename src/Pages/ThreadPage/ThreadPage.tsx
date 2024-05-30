@@ -47,7 +47,7 @@ const ThreadPage = () => {
 
     try {
       const commentData = {
-        author: user.name,
+        author: user.username,
         threadId: thread.id,
         content: newComment,
       };
