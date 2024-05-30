@@ -11,7 +11,6 @@ import Dropdown from '@mui/joy/Dropdown';
 import Alert from '@mui/joy/Alert';
 import Modal from '@mui/joy/Modal';
 import ModalClose from '@mui/joy/ModalClose';
-import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import { AuthContext, AuthContextType } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
@@ -109,7 +108,7 @@ const SignupLogin: React.FC = () => {
         setFadeOut(false); // Reset fade-out for next alert
       }, 3000);
     } catch (error) {
-      setSignupError('Account name must be unique.'); // Set error message
+      setSignupError('Username already exists.'); // Set error message
       setSignupLoginVisible(true);
     }
   };
@@ -144,6 +143,11 @@ const SignupLogin: React.FC = () => {
     return username.trim() !== '' && password.trim() !== '';
   };
 
+  const handleLogout = () => {
+    logout();
+    setOpen(false);
+  };
+
   return (
     <div>
       <Modal
@@ -160,29 +164,31 @@ const SignupLogin: React.FC = () => {
         <Sheet
           variant="outlined"
           sx={{
-            width: 400,
+            width: 346,
             borderRadius: 'md',
             p: 3,
             boxShadow: 'lg',
-            backgroundColor: '#000000CC'
+            backgroundColor: '#000000CC',
+            borderColor: '#ffffff0f'
           }}
         >
-          <Typography
-            component="h2"
-            id="modal-title"
-            level="h4"
-            textColor="inherit"
-            fontWeight="lg"
-            mb={1}
-          >
+          <h2 className="text-txtdark mb-2">
             Are you sure you want to logout?
-          </Typography>
-          <button
-            onClick={logout}
-            className="px-4 py-2 bg-red-500 text-white rounded-lg hover:opacity-80"
-          >
-            Logout
-          </button>
+          </h2>
+          <div className="flex justify-center gap-6 p-3">
+            <button
+              onClick={handleLogout}
+              className="px-4 py-2 border-bordercol border-[1px] text-red-500 rounded-lg hover:opacity-80 hover:bg-bordercol"
+            >
+              Logout
+            </button>
+            <button
+              onClick={() => setOpen(false)}
+              className="px-4 py-2 bg-odark border-bordercol border-[1px] text-white rounded-lg hover:bg-bordercol"
+            >
+              Close
+            </button>
+          </div>
           <ModalClose variant="plain" sx={{ m: 1 }} />
         </Sheet>
       </Modal>
@@ -262,7 +268,7 @@ const SignupLogin: React.FC = () => {
                       color: '#ffffffc0',
                       marginX: '5px',
                       '&:hover': {
-                        color: '#ffffff !important',
+                        color: '#F26969 !important',
                         borderRadius: '8px',
                         marginX: '5px',
                         backgroundColor: '#ffffff0f !important'
