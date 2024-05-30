@@ -55,10 +55,11 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 	};
 
 	const logout = async () => {
+    const logoutData = JSON.parse(localStorage.getItem("userLogged"));
 		const logoutConfig = {
 			method: "delete",
 			url: "http://localhost:8080/login",
-			data: { user },
+			data: logoutData,
 		};
 		try {
 			await axios(logoutConfig);
