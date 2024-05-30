@@ -1,3 +1,4 @@
+
 import "./NewThread.css";
 
 import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
@@ -18,10 +19,12 @@ const NewThread = () => {
     title: null,
     content: null,
   });
+
   const { user } = useAuth();
 
   const handlePostNewThread = async (e: React.SyntheticEvent) => {
     e.preventDefault();
+
     if (!user) {
       console.log("could not find user");
       return;
@@ -29,8 +32,9 @@ const NewThread = () => {
 
     postData.author = user?.name;
 
+
     try {
-      await axios.post("http://localhost:8080/posts/add", postData);
+      await axios.post('http://localhost:8080/posts/add', postData);
     } catch (error) {
       console.log(error);
     }
@@ -48,9 +52,12 @@ const NewThread = () => {
   return (
     <>
       <div className="flex flex-col align-stretch w-[50vw] gap-6">
+
         <BreadcrumbsComp />
 
-        <form
+        
+        {user ? (
+          <form
           id="newPostForm"
           className="flex flex-col w-[50vw] p-4 border rounded-md border-bordercol text-txtdark gap-3"
           onSubmit={(e) => handlePostNewThread(e)}
@@ -117,10 +124,18 @@ const NewThread = () => {
               type="submit"
               value="Submit"
               className="bg-odark border rounded-md border-bordercol text-txtbright hover:bg-bordercol w-24 cursor-pointer disabled:hover:bg-transparent disabled:hover:cursor-not-allowed disabled:opacity-45"
-              disabled={!postData.title || !postData.content || !postData.forum}
-            />
-          </section>
-        </form>
+              disabled={!postData.title || !postData.content || !postData.forum}/>
+          
+          
+          
+          ) : (
+          <div className="text-center">
+            <p>Log in to create a thread</p>
+            <p>
+              <b>ADD A LOCK GRAPHIC MAYBE WITH ARROW TO TOP RIGHT</b>
+            </p>
+          </div>
+        )}
       </div>
     </>
   );

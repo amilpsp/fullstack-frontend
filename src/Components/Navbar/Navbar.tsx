@@ -12,18 +12,19 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24">
+    <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24 bg-odark">
       <div className="flex w-full flex-wrap items-center justify-between px-3">
         {/* LEFT - Logo */}
         <div className="flex ml-16">
           <Link to="" className="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0">
             <img
-              src="logo.png"
+              src="https://raw.githubusercontent.com/amilpsp/fullstack-frontend/develop/public/logo.png"
               alt="logo"
               className="max-h-12 me-2 drop-shadow-blue hover:drop-shadow-red transition-transform duration-75"
             />
           </Link>
         </div>
+
         {/* MIDDLE - Search Bar*/}
         <div className="mx-auto flex-row ps-0 md:flex">
           <SearchBar onSearch={handleSearch} />

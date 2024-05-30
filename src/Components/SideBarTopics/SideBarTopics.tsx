@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 
-export default function SignupLogin() {
+export default function SideBarTopics() {
   return (
     <div className="absolute top-40 left-20 px-2 py-2 max-w-[18%]  bg-odark border-bordercol border-[1px] rounded-lg text-left">
       <div className="min-w-52">
-        <Link to="">
+        <Link to="/topic/all">
           <button className="flex items-center justify-left px-4 w-full h-10 rounded-lg my-1 hover:bg-bordercol hover:shadow-test">
             <svg
               version="1.1"
@@ -56,7 +56,7 @@ export default function SignupLogin() {
               x="0px"
               y="0px"
               viewBox="0 0 42 42"
-              className="h-[1rem] mr-2 ml-2 fill-txtbright"
+              className="h-[1rem] mr-2 ml-2 fill-txtbright "
             >
               <style type="text/css"></style>
               <polygon

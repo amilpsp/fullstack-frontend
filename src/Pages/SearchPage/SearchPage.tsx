@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
-import SmTopicButtons from '../../Components/SmTopicButtons/SmTopicButtons';
 import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
 import './SearchPage.css';
 
@@ -14,11 +12,11 @@ interface Post {
   content: string;
   date: string;
   time: string;
-  originalPoster: string;
+  author: string;
   topic: string;
   replies: number;
   lastReply: {
-    name: string;
+    author: string;
     date: string;
     time: string;
   };
@@ -60,10 +58,9 @@ const SearchPage = () => {
 
   return (
     <div className="flex flex-col w-[50vw]">
-      <BreadcrumbsComp />
       <div className="text-center">
-        <p className="m-4 text-txtdark">Search specific topics:</p>
-        <SmTopicButtons />
+        {/* <p className="m-4 text-txtdark">Search specific topics:</p>
+        <SmTopicButtons /> */}
         <p className="m-4 text-txtdark">
           Found {filteredPosts.length} threads containing{' '}
           <span className="text-txtbright">"{query}"</span>

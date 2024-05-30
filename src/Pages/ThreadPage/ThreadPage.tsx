@@ -3,7 +3,7 @@ import Reply from "../../Components/Reply/Reply";
 import "/src/Components/Reply/Reply.tsx";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
 import { useAuth } from "../../contexts/useAuth";
 
@@ -33,6 +33,11 @@ const ThreadPage = () => {
   const { threadId } = useParams<{ threadId: string }>();
   const [newComment, setNewComment] = useState<string>();
   const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleUsernameNavigation = (username: string) => {
+    navigate(`/user/${username}`);
+  };
 
   const handlePostNewComment = async (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -88,30 +93,37 @@ const ThreadPage = () => {
         <h1>Thread not found</h1>
       ) : (
         <>
-          <section className="flex flex-col gap-4 ">
-            <article
-              id="post-body"
-              className="border border-bordercol rounded-lg p-4 bg-odark"
-            >
-              <div className="flex flex-row justify-between">
-                <h2 className="text-xl mb-4">{thread?.name}</h2>
-                <div className="text-xs text-txtdark">
-                  posted in{" "}
-                  <span className="text-txtbright ml-2">{thread?.topic}</span>
+          {thread && (
+            <section className="flex flex-col gap-4 ">
+              <article
+                id="post-body"
+                className="border border-bordercol rounded-lg p-4 bg-odark"
+              >
+                <div className="flex flex-row justify-between">
+                  <h2 className="text-xl mb-4">{thread?.name}</h2>
+                  <div className="text-xs text-txtdark">
+                    posted in{" "}
+                    <span className="text-txtbright ml-2">{thread.topic}</span>
+                  </div>
                 </div>
+                <p>{thread?.content}</p>
+              </article>
+              {/* end of post body */}
+              <div
+                id="post-info"
+                className="flex flex-row justify-end gap-6 mb-8"
+              >
+                <span
+                  className=" cursor-pointer hover:underline"
+                  onClick={() => handleUsernameNavigation(thread.author)}
+                >
+                  {thread.author}
+                </span>
+                <span className="text-txtdark">{thread?.date}</span>
+                <span className="text-txtdark">{thread?.time}</span>
               </div>
-              <p>{thread?.content}</p>
-            </article>
-            {/* end of post body */}
-            <div
-              id="post-info"
-              className="flex flex-row justify-end gap-6 mb-8"
-            >
-              <span>{thread?.author}</span>
-              <span className="text-txtdark">{thread?.date}</span>
-              <span className="text-txtdark">{thread?.time}</span>
-            </div>
-          </section>
+            </section>
+          )}
 
           {user && (
             <form

@@ -16,7 +16,8 @@ export default {
         txtdark: '#ffffff66',
         bgcol: '#060606',
         borderfocus: '#ffffff20',
-        odark: '#00000060',
+        odark: '#000000CC',
+        sec: '#E21847',
         ig1: '#0043E6',
         ig2: '#E70DB2',
         ig3: '#FFC33D',
@@ -28,18 +29,19 @@ export default {
         fb2: '#1847A7'
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif']
+        sans: ['Inter', 'sans-serif'],
+        poppins: ['Poppins', 'sans']
       },
       spacing: {
         180: '32rem'
       },
       dropShadow: {
-        test: '0 0px 10px rgba(170, 200, 255, 0.25)',
-        red: '0 0px 12px rgba(255, 200, 200, 0.25)',
+        test: '0 0px 25px rgba(170, 200, 255, 0.25)',
+        red: '0 0px 15px rgba(237, 228, 236, 0.25)',
         blue: '0 0px 12px rgba(200, 200, 255, 0.25)'
       },
       boxShadow: {
-        test: '0 0px 25px 0 rgba(255, 255, 255, 0.05)',
+        test: '0 0px 10px 0 rgba(237, 228, 236, 0.05)',
         test2: '0 0 25px 0px rgba(255, 255, 255, 0.05)',
         test3: '0 0 8px 0px rgba(255, 255, 255, 0.05)'
       }

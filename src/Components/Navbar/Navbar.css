@@ -1,0 +1,4 @@
+.bordergradient {
+  border: 1px solid transparent;
+  border-image: linear-gradient(to right, #e21847, blue, #e21847) 0 0 1 0;
+}

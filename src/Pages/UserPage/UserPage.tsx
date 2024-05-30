@@ -76,7 +76,6 @@ export const UserPage = () => {
           />
         </div>
       </span>
-      ;
     </>
   );
 };

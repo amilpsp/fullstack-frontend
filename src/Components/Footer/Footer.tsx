@@ -2,7 +2,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="w-full text-center border-t-[1px] border-bordercol pb-14">
+    <footer className="w-full text-center border-t-[1px] border-bordercol pb-14 justify-center">
       <p className="mt-12 text-txtbright"></p>
       <ul className="flex flex-row justify-center mt-8 mb-14 text-lg">
         <li className="px-3">
@@ -75,6 +75,7 @@ const Footer = () => {
           </svg>
         </li>
       </ul>
+
       <p className="text-txtdark text-sm">
         The content of this site is copyright-protected and is the property of
         Fully Stacked Team, ITHS.

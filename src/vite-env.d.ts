@@ -16,5 +16,7 @@ interface Post {
 }
 
 interface User {
-  name: string;
+	id?: number;
+	username: string;
+	token?: string;
 }
