@@ -63,7 +63,6 @@ const SignupLogin: React.FC = () => {
 			.then((result) => {
 				localStorage.setItem("userLogged", JSON.stringify(result.data));
 				login(result.data);
-				console.log(result.data);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -84,8 +83,7 @@ const SignupLogin: React.FC = () => {
 		axios(signupConfig)
 			.then((result) => {
 				localStorage.setItem("userLogged", JSON.stringify(result.data));
-				login({ username: newUsername });
-				console.log(result.data);
+				login(result.data);
 			})
 			.catch((error) => {
 				console.log(error);
