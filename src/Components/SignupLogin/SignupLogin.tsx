@@ -14,7 +14,6 @@ import ModalClose from '@mui/joy/ModalClose';
 import Sheet from '@mui/joy/Sheet';
 import { AuthContext, AuthContextType } from '../../contexts/AuthContext';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 const SignupLogin: React.FC = () => {
   const [activeTab, setActiveTab] = useState<number>(0);
@@ -40,7 +39,7 @@ const SignupLogin: React.FC = () => {
     throw new Error('useContext must be used within an AuthProvider');
   }
 
-  const { login, user, logout } = authContext;
+  const { login, signup, user, logout } = authContext;
   /* const handleLogoutClick =(id:number,token)=>{
     const logoutConfig = {
 			method: "delete",
@@ -60,19 +59,8 @@ const SignupLogin: React.FC = () => {
 
   const handleLoginSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
-    const loginConfig = {
-      method: 'post',
-      url: 'http://localhost:8080/login',
-      data: {
-        username,
-        password
-      }
-    };
     try {
-      const result = await axios(loginConfig);
-      localStorage.setItem('userLogged', JSON.stringify(result.data));
-      login(result.data);
+      await login({ username, password });
       setLoginError(null); // Clear any previous error messages
       setSignupLoginVisible(false); // Close the signup/login window on success
     } catch (error) {
@@ -83,19 +71,8 @@ const SignupLogin: React.FC = () => {
 
   const handleSignUpSubmit = async (e: FormEvent) => {
     e.preventDefault();
-
-    const signupConfig = {
-      method: 'post',
-      url: 'http://localhost:8080/signup',
-      data: {
-        username: newUsername,
-        password: newPassword
-      }
-    };
     try {
-      const result = await axios(signupConfig);
-      localStorage.setItem('userLogged', JSON.stringify(result.data));
-      login(result.data);
+      await signup({ username: newUsername, password: newPassword });
       setSignupError(null); // Clear any previous error messages
       setSignupLoginVisible(false); // Close the signup/login window on success
       setShowAlert(true); // Show alert
@@ -105,7 +82,7 @@ const SignupLogin: React.FC = () => {
 
       setTimeout(() => {
         setShowAlert(false);
-        setFadeOut(false); // Reset fade-out for next alert
+        setFadeOut(false); // Reset fade-out
       }, 3000);
     } catch (error) {
       setSignupError('Username already exists.'); // Set error message
