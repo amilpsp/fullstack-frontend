@@ -20,8 +20,22 @@ interface AuthProviderProps {
 }
 
 // Create a provider component
+
 export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 	const [user, setUser] = useState<User | null>(null);
+
+	const login = async (userData: User) => {
+		const loginConfig = {
+			method: "post",
+			url: "http://localhost:8080/login",
+			data: userData,
+		};
+
+		const result = await axios(loginConfig);
+		setUser(userData);
+		localStorage.setItem("userLogged", JSON.stringify(result.data));
+		console.log("Logged in user:", userData.username); // Log user data
+	};
 
 	const signup = async (userData: User) => {
 		const signupConfig = {
@@ -36,24 +50,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 			console.log("error in AuthContext signup function");
 		}
 	};
-
-	const login = async (userData: User) => {
-		const loginConfig = {
-			method: "post",
-			url: "http://localhost:8080/login",
-			data: userData,
-		};
-		try {
-			const result = await axios(loginConfig);
-			localStorage.setItem("userLogged", JSON.stringify(result.data));
-			//login(result.data);
-		} catch (error) {
-			console.log("error in AuthContext login function");
-		}
-		console.log("Logging in user:", userData.username); // Log user data
-		setUser(userData);
-	};
-
+	
 	const logout = async () => {
     const logoutData = JSON.parse(localStorage.getItem("userLogged"));
 		const logoutConfig = {
