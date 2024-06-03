@@ -1,14 +1,14 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { PostsContainer } from "../../Components/postsContainer/PostsContainer";
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
 
 export const UserPage = () => {
   const { username } = useParams<{ username: string }>();
   const [posts, setPosts] = useState<Post[]>([]);
 
   const postsContainerInfo = {
-    title: "User threads",
+    title: 'User threads',
     svg: (
       <svg
         width="30"
