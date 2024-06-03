@@ -1,16 +1,16 @@
-import { Link, useLocation } from 'react-router-dom';
+/* import { Link, useLocation } from 'react-router-dom';
 import Breadcrumbs from '@mui/joy/Breadcrumbs';
-import Typography from '@mui/joy/Typography';
+import Typography from '@mui/joy/Typography'; */
 
 const BreadcrumbsComp = () => {
-  const location = useLocation();
+  /* const location = useLocation();
   const pathnames = location.pathname
     .split('/')
     .filter((x) => x && isNaN(Number(x)));
-
+ */
   return (
     <div className="self-center">
-      <Breadcrumbs
+      {/* <Breadcrumbs
         aria-label="breadcrumbs"
         sx={{
           color: '#ffffffc0',
@@ -37,7 +37,7 @@ const BreadcrumbsComp = () => {
             </Typography>
           );
         })}
-      </Breadcrumbs>
+      </Breadcrumbs> */}
     </div>
   );
 };

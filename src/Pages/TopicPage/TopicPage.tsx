@@ -101,7 +101,7 @@ const TopicPage = () => {
   }, [handlePostsFetch, pathname]);
 
   return (
-    <div className="flex flex-col align-stretch w-[50vw] gap-6">
+    <div className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6">
       <BreadcrumbsComp />
       {posts && (
         <PostsContainer

@@ -1,10 +1,10 @@
-import "./NewThread.css";
+import './NewThread.css';
 
-import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
-import axios from "axios";
-import React, { useState } from "react";
-import { useAuth } from "../../contexts/useAuth";
-import { useNavigate } from "react-router-dom";
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useAuth } from '../../contexts/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 interface PostData {
   author: string | null;
@@ -17,7 +17,7 @@ const NewThread = () => {
     author: null,
     forum: null,
     title: null,
-    content: null,
+    content: null
   });
 
   const { user } = useAuth();
@@ -27,7 +27,7 @@ const NewThread = () => {
     e.preventDefault();
 
     if (!user) {
-      console.log("could not find user");
+      console.log('could not find user');
       return;
     }
 
@@ -35,10 +35,10 @@ const NewThread = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/posts/add",
+        'http://localhost:8080/posts/add',
         postData
       );
-      const formattedThreadName = postData.title?.replace(" ", "-");
+      const formattedThreadName = postData.title?.replace(' ', '-');
       navigate(`/thread/${response.data.id}/${formattedThreadName}`);
     } catch (error) {
       console.log(error);
@@ -56,13 +56,13 @@ const NewThread = () => {
 
   return (
     <>
-      <div className="flex flex-col align-stretch w-[50vw] gap-6">
+      <div className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6">
         <BreadcrumbsComp />
 
         {user ? (
           <form
             id="newPostForm"
-            className="flex flex-col w-[50vw] p-4 border rounded-md border-bordercol text-txtdark gap-3"
+            className="flex flex-col p-4 border rounded-md border-bordercol text-txtdark gap-3"
             onSubmit={(e) => handlePostNewThread(e)}
           >
             <input
@@ -135,10 +135,7 @@ const NewThread = () => {
           </form>
         ) : (
           <div className="text-center">
-            <p>Log in to create a thread</p>
-            <p>
-              <b>ADD A LOCK GRAPHIC MAYBE WITH ARROW TO TOP RIGHT</b>
-            </p>
+            <p>Log in to create a thread.</p>
           </div>
         )}
       </div>
