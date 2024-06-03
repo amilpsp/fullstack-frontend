@@ -16,7 +16,7 @@ const BreadcrumbsComp = () => {
           color: '#ffffffc0',
           padding: '0',
           margin: '0.5rem',
-          fontSize: '0.9rem'
+          fontSize: '0.9rem',
         }}
       >
         {pathnames.map((pathname, index) => {

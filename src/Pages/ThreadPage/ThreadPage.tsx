@@ -49,7 +49,7 @@ const ThreadPage = () => {
       const commentData = {
         author: user.username,
         threadId: thread.id,
-        content: newComment
+        content: newComment,
       };
 
       await axios.post('http://localhost:8080/comments/add', commentData);

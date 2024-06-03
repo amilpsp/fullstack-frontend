@@ -82,7 +82,7 @@ const TopicPage = () => {
 	h-1.7v-3.5h7v3.5H22.7z M29.7,21.8h-3.6v-3.5h3.6V21.8z"
         />
       </svg>
-    )
+    ),
   };
 
   const handlePostsFetch = useCallback(async () => {
