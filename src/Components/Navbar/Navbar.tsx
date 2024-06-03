@@ -72,7 +72,9 @@ const Navbar: React.FC = () => {
           </li>
         </ul>
       </div>
-      <SideBarTopics />
+      <div className="lg:flex hidden">
+        <SideBarTopics />
+      </div>
     </nav>
   );
 };

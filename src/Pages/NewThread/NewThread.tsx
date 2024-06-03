@@ -17,7 +17,7 @@ const NewThread = () => {
     author: null,
     forum: null,
     title: null,
-    content: null,
+    content: null
   });
 
   const { user } = useAuth();
@@ -56,13 +56,13 @@ const NewThread = () => {
 
   return (
     <>
-      <div className="flex flex-col align-stretch w-[50vw] gap-6">
+      <div className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6">
         <BreadcrumbsComp />
 
         {user ? (
           <form
             id="newPostForm"
-            className="flex flex-col w-[50vw] p-4 border rounded-md border-bordercol text-txtdark gap-3"
+            className="flex flex-col p-4 border rounded-md border-bordercol text-txtdark gap-3"
             onSubmit={(e) => handlePostNewThread(e)}
           >
             <input
@@ -135,10 +135,7 @@ const NewThread = () => {
           </form>
         ) : (
           <div className="text-center">
-            <p>Log in to create a thread</p>
-            <p>
-              <b>ADD A LOCK GRAPHIC MAYBE WITH ARROW TO TOP RIGHT</b>
-            </p>
+            <p>Log in to create a thread.</p>
           </div>
         )}
       </div>

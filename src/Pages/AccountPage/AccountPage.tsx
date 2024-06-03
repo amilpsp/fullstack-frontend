@@ -36,7 +36,7 @@ const AccountPage = () => {
         </defs>
       </svg>
     ),
-    posts: posts,
+    posts: posts
   };
 
   const handleFetchUserThreads = async () => {
@@ -60,7 +60,7 @@ const AccountPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col align-stretch w-[50vw] gap-6">
+    <div className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6">
       <BreadcrumbsComp />
 
       {user && (
@@ -89,8 +89,8 @@ const AccountPage = () => {
         </span>
       )}
       {!user && (
-        <div className="flex text-center m-5 text-2xl self-center text-txtbright">
-          <p>{'Login to see account info! >:('}</p>
+        <div className="flex text-center m-5 text-xl text-txtbright">
+          <p>{'Login to see account info.'}</p>
         </div>
       )}
     </div>
