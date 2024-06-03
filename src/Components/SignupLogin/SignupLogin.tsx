@@ -302,7 +302,7 @@ const SignupLogin: React.FC = () => {
           {isSignupLoginVisible && (
             <div
               onClick={toggleSignupLogin}
-              className="fixed inset-0 flex items-top justify-center bg-black bg-opacity-0 lg:bg-opacity-70 z-50"
+              className="fixed inset-0 flex items-top justify-center lg:bg-black bg-opacity-0 lg:bg-opacity-0 z-50 lg:backdrop-blur-md"
             >
               <div
                 onClick={(e) => e.stopPropagation()}
