@@ -17,7 +17,7 @@ const NewThread = () => {
     author: null,
     forum: null,
     title: null,
-    content: null
+    content: null,
   });
 
   const { user } = useAuth();
@@ -56,7 +56,7 @@ const NewThread = () => {
 
   return (
     <>
-      <div className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6">
+      <div className="flex flex-col align-stretch xs:w-[100vw] lg:w-[50vw] gap-6">
         <BreadcrumbsComp />
 
         {user ? (
@@ -71,7 +71,7 @@ const NewThread = () => {
               id="Title"
               placeholder="Title"
               onChange={handleChange}
-              className="flex-grow text-xl rounded-lg w-[50%] pl-4 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
+              className="flex-grow text-xl rounded-lg xl:w-[50%] pl-4 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
             />
             <textarea
               name="content"
@@ -79,14 +79,14 @@ const NewThread = () => {
               rows={6}
               placeholder="Write about something..."
               onChange={handleChange}
-              className="flex-grow  rounded-lg pl-4 pt-4 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
+              className="flex-grow rounded-lg pl-4 pt-4 border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none"
             ></textarea>
             <section className="flex justify-between gap-2">
-              <div className="flex gap-2">
-                <span className="ml-1 self-center">select a topic:</span>
+              <div className="flex flex-col md:flex-row md:gap-2">
+                <span className="md:ml-1">Select a topic:</span>
                 <label
-                  className=" flex gap-2 border border-bordercol rounded-md
-              p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
+                  className="flex gap-2 md:border border-bordercol rounded-md
+              xs:p-1 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
                 >
                   <input
                     type="radio"
@@ -98,8 +98,8 @@ const NewThread = () => {
                 </label>
 
                 <label
-                  className=" flex gap-2 border border-bordercol rounded-md
-              p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
+                  className="flex gap-2 md:border border-bordercol rounded-md
+                  xs:p-1.5 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
                 >
                   <input
                     type="radio"
@@ -111,8 +111,8 @@ const NewThread = () => {
                 </label>
 
                 <label
-                  className=" flex gap-2 border border-bordercol rounded-md
-              p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
+                  className=" flex gap-2 md:border border-bordercol rounded-md
+              xs:p-1 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
                 >
                   <input
                     type="radio"
@@ -135,7 +135,10 @@ const NewThread = () => {
           </form>
         ) : (
           <div className="text-center">
-            <p>Log in to create a thread.</p>
+            <p>Log in to create a thread</p>
+            <p>
+              <b>ADD A LOCK GRAPHIC MAYBE WITH ARROW TO TOP RIGHT</b>
+            </p>
           </div>
         )}
       </div>
