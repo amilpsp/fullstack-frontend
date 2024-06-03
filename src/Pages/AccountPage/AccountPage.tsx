@@ -36,7 +36,7 @@ const AccountPage = () => {
         </defs>
       </svg>
     ),
-    posts: posts
+    posts: posts,
   };
 
   const handleFetchUserThreads = async () => {
