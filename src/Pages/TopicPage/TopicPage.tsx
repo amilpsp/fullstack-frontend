@@ -4,6 +4,7 @@ import './TopicPage.css';
 import axios from 'axios';
 import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
 import { useLocation, useParams } from 'react-router-dom';
+import { MobilePostsContainer } from '../../Components/postsContainer/MobilePostsContainer';
 
 const TopicPage = () => {
   const [posts, setPosts] = useState<Post[]>([]);
@@ -104,13 +105,28 @@ const TopicPage = () => {
     <div className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6">
       <BreadcrumbsComp />
       {posts && (
-        <PostsContainer
-          title={topicName || 'All threads'}
-          image={
-            topicIcons[topicName as keyof typeof topicIcons] || topicIcons.all
-          }
-          posts={posts}
-        />
+        <section>
+          <div className=" max-lg:hidden">
+            <PostsContainer
+              title={topicName || 'All threads'}
+              image={
+                topicIcons[topicName as keyof typeof topicIcons] ||
+                topicIcons.all
+              }
+              posts={posts}
+            />
+          </div>
+          <div className=" lg:hidden">
+            <MobilePostsContainer
+              title={topicName || 'All threads'}
+              image={
+                topicIcons[topicName as keyof typeof topicIcons] ||
+                topicIcons.all
+              }
+              posts={posts}
+            />
+          </div>
+        </section>
       )}
     </div>
   );
