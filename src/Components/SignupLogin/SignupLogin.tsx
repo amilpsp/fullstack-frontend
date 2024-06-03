@@ -478,7 +478,7 @@ const SignupLogin: React.FC = () => {
                         </button>
                       </form>
                       <p className="mt-6 mb-2 text-txtdark text-sm">
-                        Already have an account?
+                        Already have an account?{' '}
                         <span
                           onClick={() => setActiveTab(0)}
                           className="text-txtbright cursor-pointer"
