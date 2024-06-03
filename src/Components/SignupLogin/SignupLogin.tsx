@@ -135,7 +135,7 @@ const SignupLogin: React.FC = () => {
         sx={{
           display: 'flex',
           justifyContent: 'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}
       >
         <Sheet
@@ -146,7 +146,7 @@ const SignupLogin: React.FC = () => {
             p: 3,
             boxShadow: 'lg',
             backgroundColor: '#000000CC',
-            borderColor: '#ffffff0f'
+            borderColor: '#ffffff0f',
           }}
         >
           <h2 className="text-txtdark mb-2">
@@ -177,7 +177,7 @@ const SignupLogin: React.FC = () => {
             sx={{
               backgroundColor: '#000000CC',
               border: '#4ade8088 1px solid',
-              color: '#FFFFFF'
+              color: '#FFFFFF',
             }}
           >
             Account created successfully!
@@ -194,8 +194,8 @@ const SignupLogin: React.FC = () => {
                 paddingY: '0',
                 border: 'none', // Change border color
                 '&:hover': {
-                  backgroundColor: '#1a1a1a00' // Hover background color
-                }
+                  backgroundColor: '#1a1a1a00', // Hover background color
+                },
               }}
             >
               <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12 text-txtbright">
@@ -221,7 +221,7 @@ const SignupLogin: React.FC = () => {
               sx={{
                 backgroundColor: '#060606', // Change background color
                 border: '1px solid #ffffff0f', // Change border color
-                color: '#ffffff' // Change text color
+                color: '#ffffff', // Change text color
               }}
             >
               <MenuItem
@@ -232,8 +232,8 @@ const SignupLogin: React.FC = () => {
                     color: '#ffffff !important',
                     borderRadius: '8px',
                     marginX: '5px',
-                    backgroundColor: '#ffffff0f !important'
-                  }
+                    backgroundColor: '#ffffff0f !important',
+                  },
                 }}
               >
                 <Link to="/account">My threads</Link>
@@ -248,8 +248,8 @@ const SignupLogin: React.FC = () => {
                         color: '#F26969 !important',
                         borderRadius: '8px',
                         marginX: '5px',
-                        backgroundColor: '#ffffff0f !important'
-                      }
+                        backgroundColor: '#ffffff0f !important',
+                      },
                     }}
                   >
                     Logout
@@ -303,7 +303,7 @@ const SignupLogin: React.FC = () => {
                     defaultValue={0}
                     className="rounded-b-lg"
                     sx={{
-                      backgroundColor: '#06060600'
+                      backgroundColor: '#06060600',
                     }}
                   >
                     <TabList tabFlex={1}>
@@ -313,12 +313,12 @@ const SignupLogin: React.FC = () => {
                           color: '#8E8E8E',
                           '&.Mui-selected': {
                             color: 'white',
-                            background: '#06060620'
+                            background: '#06060620',
                           },
                           '&:not(.Mui-selected):hover': {
                             color: 'white',
-                            background: '#06060620'
-                          }
+                            background: '#06060620',
+                          },
                         }}
                       >
                         <b>Login</b>
@@ -329,12 +329,12 @@ const SignupLogin: React.FC = () => {
                           color: '#8E8E8E',
                           '&.Mui-selected': {
                             color: 'white',
-                            background: '#06060620'
+                            background: '#06060620',
                           },
                           '&:not(.Mui-selected):hover': {
                             color: 'white',
-                            background: '#06060620'
-                          }
+                            background: '#06060620',
+                          },
                         }}
                       >
                         <b>Sign up</b>

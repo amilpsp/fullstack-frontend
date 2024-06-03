@@ -1,11 +1,11 @@
-import "./ThreadPage.css";
-import Reply from "../../Components/Reply/Reply";
-import "/src/Components/Reply/Reply.tsx";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
-import { useAuth } from "../../contexts/useAuth";
+import './ThreadPage.css';
+import Reply from '../../Components/Reply/Reply';
+import '/src/Components/Reply/Reply.tsx';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import { useAuth } from '../../contexts/useAuth';
 
 interface Thread {
   id: number;
@@ -52,7 +52,7 @@ const ThreadPage = () => {
         content: newComment,
       };
 
-      await axios.post("http://localhost:8080/comments/add", commentData);
+      await axios.post('http://localhost:8080/comments/add', commentData);
 
       //fetches thread again to update
       await handleFetchThread();
@@ -102,7 +102,7 @@ const ThreadPage = () => {
                 <div className="flex flex-row justify-between">
                   <h2 className="text-xl mb-4">{thread?.name}</h2>
                   <div className="text-xs text-txtdark">
-                    posted in{" "}
+                    posted in{' '}
                     <span className="text-txtbright ml-2">{thread.topic}</span>
                   </div>
                 </div>

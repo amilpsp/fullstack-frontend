@@ -1,10 +1,10 @@
-import "./NewThread.css";
+import './NewThread.css';
 
-import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
-import axios from "axios";
-import React, { useState } from "react";
-import { useAuth } from "../../contexts/useAuth";
-import { useNavigate } from "react-router-dom";
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useAuth } from '../../contexts/useAuth';
+import { useNavigate } from 'react-router-dom';
 
 interface PostData {
   author: string | null;
@@ -27,7 +27,7 @@ const NewThread = () => {
     e.preventDefault();
 
     if (!user) {
-      console.log("could not find user");
+      console.log('could not find user');
       return;
     }
 
@@ -35,10 +35,10 @@ const NewThread = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/posts/add",
+        'http://localhost:8080/posts/add',
         postData
       );
-      const formattedThreadName = postData.title?.replace(" ", "-");
+      const formattedThreadName = postData.title?.replace(' ', '-');
       navigate(`/thread/${response.data.id}/${formattedThreadName}`);
     } catch (error) {
       console.log(error);
