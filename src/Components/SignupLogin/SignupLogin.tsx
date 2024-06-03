@@ -190,7 +190,7 @@ const SignupLogin: React.FC = () => {
             <MenuButton
               sx={{
                 backgroundColor: '#00000000', // Change background color
-                paddingX: '10px',
+                paddingX: '0',
                 paddingY: '0',
                 border: 'none', // Change border color
                 '&:hover': {
@@ -258,10 +258,25 @@ const SignupLogin: React.FC = () => {
               }
             </Menu>
           </Dropdown>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 lg:hidden absolute bottom-5 right-20 px-6 py-3 border-bordercol border-[1px] fill-red-500 text-red-500 rounded-lg hover:opacity-80 hover:bg-bordercol"
+          >
+            Logout{' '}
+            <svg
+              fill="current"
+              width="20px"
+              height="20px"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M7.707,8.707,5.414,11H17a1,1,0,0,1,0,2H5.414l2.293,2.293a1,1,0,1,1-1.414,1.414l-4-4a1,1,0,0,1,0-1.414l4-4A1,1,0,1,1,7.707,8.707ZM21,1H13a1,1,0,0,0,0,2h7V21H13a1,1,0,0,0,0,2h8a1,1,0,0,0,1-1V2A1,1,0,0,0,21,1Z" />
+            </svg>
+          </button>
         </div>
       )}
       {!user && (
-        <div>
+        <div className="flex">
           <button
             onClick={toggleSignupLogin}
             className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12  hover:drop-shadow-test"
@@ -281,17 +296,19 @@ const SignupLogin: React.FC = () => {
                 d="M10 7.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0Zm0 0 .211-.106a4 4 0 0 1 3.578 0L14 7.5m0 0a2.5 2.5 0 1 0 5 0 2.5 2.5 0 0 0-5 0Zm-2 6.303c5-3 5 3.5 9 1.767-1 4.233-6 4.233-9 1.233-3 3-8 3-9-1.233 4 1.733 4-4.767 9-1.767Z"
               />
             </svg>
+            <p className="xl:hidden ">Login</p>
           </button>
+
           {isSignupLoginVisible && (
             <div
               onClick={toggleSignupLogin}
-              className="fixed inset-0 flex items-top justify-center bg-black bg-opacity-70 z-50"
+              className="fixed inset-0 flex items-top justify-center bg-black bg-opacity-0 lg:bg-opacity-70 z-50"
             >
               <div
                 onClick={(e) => e.stopPropagation()}
                 className="relative z-60 mt-[12vh]"
               >
-                <div className="p-5 bg-odark shadow-test3 backdrop-blur-md border-bordercol border-[1px] md:w-[30vw] lg:w-[20vw] rounded-lg text-center">
+                <div className="p-5 bg-black relative -top-2 lg:bg-odark lg:shadow-test3 backdrop-blur-md border-bordercol lg:border-[1px] w-full md:w-[30vw] lg:w-[20vw] h-full lg:h-auto lg:rounded-lg text-center">
                   <Tabs
                     aria-label="Basic tabs"
                     value={activeTab}
@@ -313,7 +330,7 @@ const SignupLogin: React.FC = () => {
                           color: '#8E8E8E',
                           '&.Mui-selected': {
                             color: 'white',
-                            background: '#06060620',
+                            background: '#06060600',
                           },
                           '&:not(.Mui-selected):hover': {
                             color: 'white',
@@ -329,7 +346,7 @@ const SignupLogin: React.FC = () => {
                           color: '#8E8E8E',
                           '&.Mui-selected': {
                             color: 'white',
-                            background: '#06060620',
+                            background: '#06060600',
                           },
                           '&:not(.Mui-selected):hover': {
                             color: 'white',
@@ -398,8 +415,8 @@ const SignupLogin: React.FC = () => {
                         name="signUpForm"
                         action="http://localhost:8080/signup"
                         onSubmit={(e) => {
-                          handleSignUpSubmit(e); // Call handleSubmit to handle form submission
-                          toggleSignupLogin(); // Call toggleSignupLogin after form submission
+                          handleSignUpSubmit(e);
+                          toggleSignupLogin();
                         }}
                       >
                         <input
@@ -472,13 +489,14 @@ const SignupLogin: React.FC = () => {
                     </TabPanel>
                     {/*-------------- END OF SIGN UP FORM -------------*/}
                   </Tabs>
+                  <button /* close button */
+                    onClick={toggleSignupLogin}
+                    className="lg:absolute lg:top-2 lg:right-3 text-white"
+                  >
+                    <span className="lg:hidden">Go back</span>{' '}
+                    <span className="hidden lg:flex scale-150">&times;</span>
+                  </button>
                 </div>
-                <button /* x-button */
-                  onClick={toggleSignupLogin}
-                  className="absolute top-1 right-2 text-white"
-                >
-                  &times;
-                </button>
               </div>
             </div>
           )}

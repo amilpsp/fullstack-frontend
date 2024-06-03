@@ -13,9 +13,9 @@ const Navbar: React.FC = () => {
 
   return (
     <nav className="relative flex w-full flex-wrap items-center justify-between border-b-[1px] border-bordercol h-24 bg-odark">
-      <div className="flex w-full flex-wrap items-center justify-between px-3">
+      <div className="flex w-full flex-wrap items-center px-3">
         {/* LEFT - Logo */}
-        <div className="flex ml-16">
+        <div className="flex ml-16 w-[30vw] mr-2">
           <Link to="" className="mx-2 my-1 flex items-center lg:mb-0 lg:mt-0">
             <img
               src="https://raw.githubusercontent.com/amilpsp/fullstack-frontend/develop/public/logo.png"
@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
           <SearchBar onSearch={handleSearch} />
         </div>
         {/* RIGHT - Create, My Threads, Login */}
-        <ul className="flex flex-row mr-16 text-sm">
+        <ul className="flex flex-row mr-16 text-sm w-[30vw] justify-end">
           <li className="px-4">
             <Link to="/newThread">
               <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12 hover:drop-shadow-test">
