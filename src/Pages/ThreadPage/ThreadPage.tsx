@@ -102,7 +102,8 @@ const ThreadPage = () => {
                 <div className="flex flex-row justify-between mx-1">
                   <h2 className="text-xl mb-4">{thread?.name}</h2>
                   <div className="text-xs text-txtdark">
-                    posted in{' '}
+                    <span className=" whitespace-nowrap"> posted in</span>
+
                     <span className="text-txtbright mx-1">{thread.topic}</span>
                   </div>
                 </div>
