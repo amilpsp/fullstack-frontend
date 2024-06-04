@@ -142,7 +142,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
                       {post.lastReply.date}
                     </h4>
                     <h4 className=" whitespace-nowrap text-txtdark">
-                      {post.lastReply.time}
+                      {post.lastReply.time.slice(0, 5)}
                     </h4>
                   </td>
                   <td className="pr-5 py-2">
@@ -151,7 +151,7 @@ export const PostsContainer = (props: PostsContainerProps) => {
                       {post.date}
                     </h4>
                     <h4 className=" whitespace-nowrap text-txtdark">
-                      {post.time}
+                      {post.time.slice(0, 5)}
                     </h4>
                   </td>
                 </tr>
