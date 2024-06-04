@@ -61,11 +61,13 @@ export const PostsContainer = (props: PostsContainerProps) => {
 
       {/* Table */}
       <div className="rounded-md overflow-hidden border border-bordercol my-5 text-txtbright bg-odark">
-        <table>
+        <table className=" ">
           {/* Titles */}
           <thead className=" border-b border-bordercol justify-between cursor-default">
             <tr>
-              <th className="font-thin text-xs text-left px-5 py-3 ">THREAD</th>
+              <th className="font-thin text-xs text-left px-5 py-3  ">
+                THREAD
+              </th>
               <th className="font-thin text-xs text-left pr-5">TOPIC</th>
               <th className="font-thin text-xs text-left pr-5">REPLIES</th>
               <th className="font-thin text-xs text-left pr-5">LAST REPLY</th>
@@ -84,12 +86,12 @@ export const PostsContainer = (props: PostsContainerProps) => {
                   className=" border-b border-bordercol hover:bg-bordercol cursor-pointer"
                   onClick={() => handlePostNavigation(post.id, post.name)}
                 >
-                  <td className="p-5 py-2">
+                  <td className="p-5 py-2 w-full">
                     <Link to="/thread">
                       {/* temp for navigating the webpage */}
                       <h3 className="my-1">{post.name}</h3>
                     </Link>
-                    <p className="text-txtdark w-[28vw]">
+                    <p className="text-txtdark">
                       {post.content.length < 125
                         ? post.content
                         : post.content.slice(0, 125) + '...'}
