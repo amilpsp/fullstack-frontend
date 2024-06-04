@@ -29,7 +29,7 @@ const SearchBarMobile: React.FC<SearchBarMobileProps> = ({ onSearch }) => {
           />
           <button
             type="submit"
-            className="flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-txtbright hover:text-white [&>svg]:w-5 hover:drop-shadow-test"
+            className="flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-txtbright [&>svg]:w-5 hover:drop-shadow-test cursor-default"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

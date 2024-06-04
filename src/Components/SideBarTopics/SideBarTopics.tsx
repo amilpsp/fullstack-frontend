@@ -14,7 +14,7 @@ export default function SideBarTopics() {
   };
 
   return (
-    <div className="lg:absolute lg:top-40 lg:left-20 px-2 py-2 lg:max-w-[18%]  bg-odark border-bordercol border-t-[1px] border-b-[1px] lg:border-[1px] lg:rounded-lg text-left">
+    <div className="lg:absolute lg:top-40 lg:left-20 px-2 py-2 lg:max-w-[18%]  bg-odark border-bordercol border-t-[1px] border-b-[1px] lg:border-[1px] lg:rounded-lg text-left z-20">
       <div className="min-w-52">
         <Link to="/topic/all">
           <button className={getButtonClass('/topic/all')}>

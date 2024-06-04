@@ -7,7 +7,7 @@ const HomePage = () => {
           <img
             src="arrowleft.png"
             alt="cityscape"
-            className="mt-5 relative top-20 right-6 object-contain h-16"
+            className="mt-5 relative top-20 right-6 object-contain h-16 z-30"
           />
           <div className="text-2xl font-semibold italic relative top-36">
             <h3>Browse topics</h3>
