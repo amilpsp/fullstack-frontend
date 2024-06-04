@@ -20,7 +20,7 @@ const AccountPage = () => {
         xmlns="http://www.w3.org/2000/svg"
         className="mx-2"
       >
-        <g clip-path="url(#clip0_4_266)">
+        <g clipPath="url(#clip0_4_266)">
           <path
             d="M38 19.1H30.4L24.7 36.2L13.3 2L7.6 19.1H0"
             stroke="#CFCFCF"

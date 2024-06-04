@@ -198,7 +198,7 @@ const SignupLogin: React.FC = () => {
                 },
               }}
             >
-              <button className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12 text-txtbright">
+              <div className="flex items-center gap-2 hover:text-white hover:stroke-white stroke-txtbright h-12 text-txtbright">
                 <svg
                   width="30px"
                   height="30px"
@@ -215,7 +215,7 @@ const SignupLogin: React.FC = () => {
                   />
                 </svg>
                 <p>{user.username}</p>
-              </button>
+              </div>
             </MenuButton>
             <Menu
               sx={{
