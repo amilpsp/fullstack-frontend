@@ -61,7 +61,11 @@ export const UserPage = () => {
   return (
     <>
       <span>
+<<<<<<< HEAD
         <div className="flex flex-col w-[100vw] lg:w-[50vw] mt-6">
+=======
+        <div className="flex flex-col w-[100vw] lg:w-[50vw] ">
+>>>>>>> 28234b84c880e135b9366ee6e99d5402d94ae03a
           <div className=" max-lg:hidden">
             <PostsContainer
               title={`${username}'s threads`}
