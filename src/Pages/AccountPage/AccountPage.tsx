@@ -100,7 +100,7 @@ const AccountPage = () => {
               />
             </div>
           </div>
-        </span>
+        </div>
       )}
       {!user && (
         <div className="flex text-center m-5 text-xl text-txtbright">
