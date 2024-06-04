@@ -69,8 +69,8 @@ const AccountPage = () => {
       <BreadcrumbsComp />
 
       {user && (
-        <span>
-          <div className="">
+        <div className="">
+          <div className="mb-12 px-6 lg:px-0">
             <h1 className="text-lg cursor-default">My account</h1>
 
             <div className="flex my-4">
@@ -84,23 +84,23 @@ const AccountPage = () => {
             <p>
               <u className="cursor-pointer hover:text-white">Change password</u>
             </p>
-            <div className="max-lg:hidden">
-              <PostsContainer
-                title={postsContainerInfo.title}
-                image={postsContainerInfo.svg}
-                posts={postsContainerInfo.posts}
-              />
-            </div>
-
-            <div className=" lg:hidden">
-              <MobilePostsContainer
-                title={postsContainerInfo.title}
-                image={postsContainerInfo.svg}
-                posts={postsContainerInfo.posts}
-              />
-            </div>
           </div>
-        </span>
+          <div className="max-lg:hidden">
+            <PostsContainer
+              title={postsContainerInfo.title}
+              image={postsContainerInfo.svg}
+              posts={postsContainerInfo.posts}
+            />
+          </div>
+
+          <div className=" lg:hidden">
+            <MobilePostsContainer
+              title={postsContainerInfo.title}
+              image={postsContainerInfo.svg}
+              posts={postsContainerInfo.posts}
+            />
+          </div>
+        </div>
       )}
       {!user && (
         <div className="flex text-center m-5 text-xl text-txtbright">

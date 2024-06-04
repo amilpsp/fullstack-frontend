@@ -7,19 +7,9 @@
 
 body {
   /* GRADIENT BACKGROUND */
-  /* background: rgb(0, 1, 20);
-  background: radial-gradient(circle, rgb(10, 10, 10) 0%, rgb(6, 6, 6) 100%); */
+  /*   background: rgb(0, 1, 20);
+  background: radial-gradient(circle, rgb(6, 0, 27) 0%, rgb(0, 0, 0) 100%); */
 
   /* SOLID BACKGROUND */
   background-color: #000000;
-
-  /* IMAGE BACKGROUND */
-
-  /* background-image: url('assets/background2.png');
-
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: 100%;
-  background-repeat: no-repeat; */
 }
