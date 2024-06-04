@@ -38,7 +38,7 @@ const TopicPage = () => {
         x="0px"
         y="0px"
         viewBox="0 0 42 42"
-        className="h-[1.5rem] mr-2 ml-2 fill-txtbright"
+        className="h-[1rem] mr-2 ml-2 fill-txtbright"
       >
         <style type="text/css"></style>
         <polygon
@@ -57,7 +57,7 @@ const TopicPage = () => {
         x="0px"
         y="0px"
         viewBox="0 0 42 42"
-        className="h-[1.5rem] mr-2 ml-2 fill-txtbright"
+        className="h-[1.1rem] mr-2 ml-2 fill-txtbright"
       >
         <style type="text/css"></style>
         <polygon
@@ -74,7 +74,7 @@ const TopicPage = () => {
         x="0px"
         y="0px"
         viewBox="0 0 42 42"
-        className="h-[1.5rem] mr-2 ml-2 fill-txtbright"
+        className="h-[1.1rem] mr-2 ml-2 fill-txtbright"
       >
         <style type="text/css"></style>
         <path
@@ -108,7 +108,7 @@ const TopicPage = () => {
         <section>
           <div className=" max-lg:hidden">
             <PostsContainer
-              title={topicName || 'All threads'}
+              title={topicName || 'all threads'}
               image={
                 topicIcons[topicName as keyof typeof topicIcons] ||
                 topicIcons.all
@@ -118,7 +118,7 @@ const TopicPage = () => {
           </div>
           <div className=" lg:hidden">
             <MobilePostsContainer
-              title={topicName || 'All threads'}
+              title={topicName || 'all threads'}
               image={
                 topicIcons[topicName as keyof typeof topicIcons] ||
                 topicIcons.all

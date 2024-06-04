@@ -90,10 +90,10 @@ export const MobilePostsContainer = (props: MobilePostsContainerProps) => {
   return (
     <div className="">
       {/* Title */}
-      <div className="flex items-center mt-10 pl-3">
+      <div className="flex items-center pl-3">
         {props.image}
 
-        <h1 className=" text-2xl ml-1 font-light whitespace-nowrap cursor-default">
+        <h1 className=" text-xl ml-1 font-light whitespace-nowrap cursor-default">
           {props.title}
         </h1>
         <div className="border-b border-bordercol flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
@@ -104,11 +104,11 @@ export const MobilePostsContainer = (props: MobilePostsContainerProps) => {
         return (
           <div
             key={index}
-            className="px-5 border-b border-bordercol pb-2 hover:bg-bordercol cursor-pointer  "
+            className="px-5 border-b border-bordercol py-4 hover:bg-bordercol cursor-pointer"
             onClick={() => handlePostNavigation(post.id, post.name)}
           >
             {/*Top*/}
-            <div className="flex justify-between pt-6 pb-1 items-center">
+            <div className="flex justify-between pb-1 items-center">
               <h2 className=" text-lg font-light  ">{post.name}</h2>
               <div className="flex items-center">
                 {topicIcons[post.topic]}
@@ -128,8 +128,8 @@ export const MobilePostsContainer = (props: MobilePostsContainerProps) => {
               <div className="flex items-center gap-2 fill-white stroke-white fill">
                 <h3 className="text-lg">{post.replies}</h3>
                 <svg
-                  width="20px"
-                  height="20px"
+                  width="18px"
+                  height="18px"
                   viewBox="0 0 32 32"
                   version="1.1"
                   xmlns="http://www.w3.org/2000/svg"

@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
 import './SearchPage.css';
 import { MobilePostsContainer } from '../../Components/postsContainer/MobilePostsContainer';
+/* import SearchBarMobile from '../../Components/SearchBarMobile/SearchBarMobile'; */
 
 const BASE_URL = 'http://localhost:8080';
 
@@ -57,11 +58,20 @@ const SearchPage = () => {
     }
   }, [query, posts]);
 
+  /* const navigate = useNavigate();
+
+  const handleSearch = (query: string) => {
+    navigate(`/search?query=${query}`);
+  }; */
+
   return (
-    <div className="flex flex-col w-[50vw]">
-      <div className="text-center">
+    <div className="flex flex-col w-[100vw] lg:w-[50vw]">
+      <div className="text-center mb-6 flex justify-center flex-col">
         {/* <p className="m-4 text-txtdark">Search specific topics:</p>
         <SmTopicButtons /> */}
+        {/* <div className="flex justify-center">
+          <SearchBarMobile onSearch={handleSearch} />
+        </div> */}
         <p className="m-4 text-txtdark">
           Found {filteredPosts.length} threads containing{' '}
           <span className="text-txtbright">"{query}"</span>
@@ -69,13 +79,13 @@ const SearchPage = () => {
       </div>
       <div className="max-lg:hidden">
         <PostsContainer
-          title="Results"
+          title="results"
           image={
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="w-7"
+              className="w-6"
             >
               <path
                 fillRule="evenodd"
@@ -90,13 +100,13 @@ const SearchPage = () => {
 
       <div className=" lg:hidden">
         <MobilePostsContainer
-          title="Results"
+          title="results"
           image={
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
               fill="currentColor"
-              className="w-7"
+              className="w-6"
             >
               <path
                 fillRule="evenodd"

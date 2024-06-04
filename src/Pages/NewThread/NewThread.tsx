@@ -56,13 +56,13 @@ const NewThread = () => {
 
   return (
     <>
-      <div className="flex flex-col align-stretch xs:w-[100vw] lg:w-[50vw] gap-6">
+      <div className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6">
         <BreadcrumbsComp />
 
         {user ? (
           <form
             id="newPostForm"
-            className="flex flex-col p-4 border rounded-md border-bordercol text-txtdark gap-3"
+            className="flex flex-col p-4 border rounded-md border-none lg:border-bordercol text-txtdark gap-3"
             onSubmit={(e) => handlePostNewThread(e)}
           >
             <input
@@ -83,10 +83,10 @@ const NewThread = () => {
             ></textarea>
             <section className="flex justify-between gap-2">
               <div className="flex flex-col md:flex-row md:gap-2">
-                <span className="md:ml-1">Select a topic:</span>
+                <span className="md:ml-1 mx-2 my-2">Select a topic:</span>
                 <label
                   className="flex gap-2 md:border border-bordercol rounded-md
-              xs:p-1 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
+              p-1.5 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
                 >
                   <input
                     type="radio"
@@ -99,7 +99,7 @@ const NewThread = () => {
 
                 <label
                   className="flex gap-2 md:border border-bordercol rounded-md
-                  xs:p-1.5 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
+                  p-1.5 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
                 >
                   <input
                     type="radio"
@@ -112,7 +112,7 @@ const NewThread = () => {
 
                 <label
                   className=" flex gap-2 md:border border-bordercol rounded-md
-              xs:p-1 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
+              p-1.5 md:p-2 hover:bg-bordercol hover:cursor-pointer text-txtbright "
                 >
                   <input
                     type="radio"
