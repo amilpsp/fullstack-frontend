@@ -125,7 +125,7 @@ const ThreadPage = () => {
             </section>
           )}
 
-          {user && (
+          {user ? (
             <form
               onSubmit={(e) => handlePostNewComment(e)}
               className="flex gap-2 mx-2"
@@ -143,6 +143,10 @@ const ThreadPage = () => {
                 className="border rounded-xl w-24 px-2 py-1 grow-0 max-h-12 border-bordercol hover:bg-bordercol cursor-pointer"
               />
             </form>
+          ) : (
+            <div className=" text-xl flex justify-center border-y border-bordercol py-2">
+              Log in to leave a comment
+            </div>
           )}
 
           <section className="flex flex-col gap-6 mb-6 mx-4">
