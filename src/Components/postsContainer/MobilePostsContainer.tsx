@@ -90,7 +90,7 @@ export const MobilePostsContainer = (props: MobilePostsContainerProps) => {
   return (
     <div className="">
       {/* Title */}
-      <div className="flex items-center mt-10">
+      <div className="flex items-center mt-10 pl-3">
         {props.image}
 
         <h1 className=" text-2xl ml-1 font-light whitespace-nowrap cursor-default">

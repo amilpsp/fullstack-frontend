@@ -4,6 +4,7 @@ import { useAuth } from '../../contexts/useAuth';
 import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { MobilePostsContainer } from '../../Components/postsContainer/MobilePostsContainer';
 
 const AccountPage = () => {
   const { user } = useAuth();
@@ -83,12 +84,21 @@ const AccountPage = () => {
             <p>
               <u className="cursor-pointer hover:text-white">Change password</u>
             </p>
+            <div className="max-lg:hidden">
+              <PostsContainer
+                title={postsContainerInfo.title}
+                image={postsContainerInfo.svg}
+                posts={postsContainerInfo.posts}
+              />
+            </div>
 
-            <PostsContainer
-              title={postsContainerInfo.title}
-              image={postsContainerInfo.svg}
-              posts={postsContainerInfo.posts}
-            />
+            <div className=" lg:hidden">
+              <MobilePostsContainer
+                title={postsContainerInfo.title}
+                image={postsContainerInfo.svg}
+                posts={postsContainerInfo.posts}
+              />
+            </div>
           </div>
         </span>
       )}

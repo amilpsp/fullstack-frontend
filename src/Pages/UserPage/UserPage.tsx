@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { PostsContainer } from '../../Components/postsContainer/PostsContainer';
+import { MobilePostsContainer } from '../../Components/postsContainer/MobilePostsContainer';
 
 export const UserPage = () => {
   const { username } = useParams<{ username: string }>();
@@ -61,19 +62,21 @@ export const UserPage = () => {
     <>
       <span>
         <div className="">
-          <h1 className="text-lg cursor-default">User</h1>
-
-          <div className="flex my-4">
-            <p className="mt-1.5 cursor-default">
-              Name: <b className="ml-4">{username}</b>
-            </p>
+          <div className=" max-lg:hidden">
+            <PostsContainer
+              title={`${username}'s threads`}
+              image={postsContainerInfo.svg}
+              posts={postsContainerInfo.posts}
+            />
           </div>
 
-          <PostsContainer
-            title={postsContainerInfo.title}
-            image={postsContainerInfo.svg}
-            posts={postsContainerInfo.posts}
-          />
+          <div className=" lg:hidden">
+            <MobilePostsContainer
+              title={`${username}'s threads`}
+              image={postsContainerInfo.svg}
+              posts={postsContainerInfo.posts}
+            />
+          </div>
         </div>
       </span>
     </>
