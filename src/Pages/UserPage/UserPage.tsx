@@ -12,8 +12,8 @@ export const UserPage = () => {
     title: 'User threads',
     svg: (
       <svg
-        width="30"
-        height="30"
+        width="22"
+        height="22"
         viewBox="0 0 38 38"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ export const UserPage = () => {
   return (
     <>
       <span>
-        <div className="">
+        <div className="flex flex-col w-[100vw] lg:w-[50vw] mt-6">
           <div className=" max-lg:hidden">
             <PostsContainer
               title={`${username}'s threads`}
