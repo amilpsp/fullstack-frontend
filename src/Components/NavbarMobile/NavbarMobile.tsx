@@ -189,11 +189,17 @@ const NavbarMobile: React.FC = () => {
               )}
               {!user && (
                 <div className="gap-3 ml-3">
-                  <button className="flex items-center gap-3 stroke-txtdark text-txtdark h-12 hover:drop-shadow-test">
+                  <button
+                    disabled
+                    className="flex items-center gap-3 stroke-txtdark text-txtdark h-12 hover:drop-shadow-test"
+                  >
                     {createSvg}
                     <h3>Create</h3>
                   </button>
-                  <button className="flex items-center gap-3 fill-txtdark text-txtdark h-12 hover:drop-shadow-test">
+                  <button
+                    disabled
+                    className="flex items-center gap-3 fill-txtdark text-txtdark h-12 hover:drop-shadow-test"
+                  >
                     {myThreadsSvg}
                     <h3>My threads</h3>
                   </button>
