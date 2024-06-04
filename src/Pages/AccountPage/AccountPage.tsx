@@ -52,11 +52,15 @@ const AccountPage = () => {
   };
 
   useEffect(() => {
-    handleFetchUserThreads();
+    if (user?.username) {
+      handleFetchUserThreads();
+    }
   }, [user]);
 
   useEffect(() => {
-    handleFetchUserThreads();
+    if (user?.username) {
+      handleFetchUserThreads();
+    }
   }, []);
 
   return (
