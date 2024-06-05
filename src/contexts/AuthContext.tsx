@@ -31,78 +31,78 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 	const [user, setUser] = useState<User | null>(null);
 
 	const checkUserSession = async (/* userData: User */) => {
-		const storedUser = localStorage.getItem("userLogged");
+    const storedUser = localStorage.getItem('userLogged');
 
-		const checkStoredConfig = {
-			method: "get",
-			url: "http://localhost:8080/login",
-			data: storedUser,
-		};
-		if (storedUser) {
-			try {
-				await axios(checkStoredConfig);
-				setUser(JSON.parse(storedUser));
-			} catch (error) {
-				console.error(
-					"Error verifying session, your session has been terminated, please log in again",
-					error
-				);
-				localStorage.removeItem("userLogged");
-			}
-		}
-	};
+    const checkStoredConfig = {
+      method: 'get',
+      url: 'https://loqui-6bmx.onrender.com/login',
+      data: storedUser,
+    };
+    if (storedUser) {
+      try {
+        await axios(checkStoredConfig);
+        setUser(JSON.parse(storedUser));
+      } catch (error) {
+        console.error(
+          'Error verifying session, your session has been terminated, please log in again',
+          error
+        );
+        localStorage.removeItem('userLogged');
+      }
+    }
+  };
 
-	const login = async (userData: User) => {
-		const loginConfig = {
-			method: "post",
-			url: "http://localhost:8080/login",
-			data: userData,
-		};
+  const login = async (userData: User) => {
+    const loginConfig = {
+      method: 'post',
+      url: 'https://loqui-6bmx.onrender.com/login',
+      data: userData,
+    };
 
-		try {
-			const result = await axios(loginConfig);
-			setUser(userData);
-			localStorage.setItem("userLogged", JSON.stringify(result.data));
-			/* 			console.log("Logged in user:", userData.username); // Log user data
-			 */
-		} catch (error) {
-			throw new Error("Login failed");
-		}
-	};
+    try {
+      const result = await axios(loginConfig);
+      setUser(userData);
+      localStorage.setItem('userLogged', JSON.stringify(result.data));
+      /* 			console.log("Logged in user:", userData.username); // Log user data
+       */
+    } catch (error) {
+      throw new Error('Login failed');
+    }
+  };
 
-	const signup = async (userData: User) => {
-		const signupConfig = {
-			method: "post",
-			url: "http://localhost:8080/signup",
-			data: userData,
-		};
+  const signup = async (userData: User) => {
+    const signupConfig = {
+      method: 'post',
+      url: 'https://loqui-6bmx.onrender.com/signup',
+      data: userData,
+    };
 
-		try {
-			const result = await axios(signupConfig);
-			await login(result.data);
-		} catch (error) {
-			throw new Error("Signup failed");
-		}
-	};
+    try {
+      const result = await axios(signupConfig);
+      await login(result.data);
+    } catch (error) {
+      throw new Error('Signup failed');
+    }
+  };
 
-	const logout = async () => {
-		const logoutData = JSON.parse(localStorage.getItem("userLogged") || "{}");
-		const logoutConfig = {
-			method: "delete",
-			url: "http://localhost:8080/login",
-			data: logoutData,
-		};
+  const logout = async () => {
+    const logoutData = JSON.parse(localStorage.getItem('userLogged') || '{}');
+    const logoutConfig = {
+      method: 'delete',
+      url: 'https://loqui-6bmx.onrender.com/login',
+      data: logoutData,
+    };
 
-		try {
-			await axios(logoutConfig);
-		} catch (error) {
-			console.log(
-				"wasn't able to remove the logged in session from the database"
-			);
-		}
-		localStorage.removeItem("userLogged");
-		setUser(null);
-	};
+    try {
+      await axios(logoutConfig);
+    } catch (error) {
+      console.log(
+        "wasn't able to remove the logged in session from the database"
+      );
+    }
+    localStorage.removeItem('userLogged');
+    setUser(null);
+  };
 
 	useEffect(() => {
 		checkUserSession();
