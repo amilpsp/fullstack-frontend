@@ -89,7 +89,7 @@ const TopicPage = () => {
   const handlePostsFetch = useCallback(async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/posts${topicName ? `?topic=${topicName}` : ''}`
+        `https://loqui-6bmx.onrender.com/posts${topicName ? `?topic=${topicName}` : ''}`
       );
       setPosts(response.data);
     } catch (error) {

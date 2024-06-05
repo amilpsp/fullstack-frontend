@@ -43,7 +43,7 @@ const SignupLogin: React.FC = () => {
   /* const handleLogoutClick =(id:number,token)=>{
     const logoutConfig = {
 			method: "delete",
-			url: "http://localhost:8080/login",
+			url: "https://loqui-6bmx.onrender.com/login",
 			data: { user_id:id, token:token },
 		};
 		axios(logoutConfig)
@@ -362,7 +362,7 @@ const SignupLogin: React.FC = () => {
                     <TabPanel value={0}>
                       <form
                         name="loginForm"
-                        action="http://localhost:8080/login"
+                        action="https://loqui-6bmx.onrender.com/login"
                         onSubmit={(e) => {
                           handleLoginSubmit(e); // Call handleSubmit to handle form submission
                           toggleSignupLogin(); // Call toggleSignupLogin after form submission
@@ -413,7 +413,7 @@ const SignupLogin: React.FC = () => {
                     <TabPanel value={1}>
                       <form
                         name="signUpForm"
-                        action="http://localhost:8080/signup"
+                        action="https://loqui-6bmx.onrender.com/signup"
                         onSubmit={(e) => {
                           handleSignUpSubmit(e);
                           toggleSignupLogin();

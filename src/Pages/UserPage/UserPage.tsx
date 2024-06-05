@@ -41,7 +41,7 @@ export const UserPage = () => {
   const handleFetchUserThreads = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:8080/users/${username}`
+        `https://loqui-6bmx.onrender.com/users/${username}`
       );
 
       setPosts(response.data.posts);
