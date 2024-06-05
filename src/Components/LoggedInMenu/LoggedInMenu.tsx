@@ -8,7 +8,7 @@ const LoggedInMenu = () => {
         <div className="text-center align-middle p-4 text-txtdark absolute bg-bgcol border-bordercol border rounded-lg overflow-hidden">
           <div className="flex-col justify center">
             <p className="mx-4">
-              Account: <span className="text-txtbright">{user.name}</span>
+              Account: <span className="text-txtbright">{user.username}</span>
             </p>
             <button
               onClick={logout}

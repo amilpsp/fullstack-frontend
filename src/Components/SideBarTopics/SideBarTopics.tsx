@@ -1,11 +1,23 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-export default function SignupLogin() {
+export default function SideBarTopics() {
+  const location = useLocation();
+
+  const getButtonClass = (path: string) => {
+    const baseClass =
+      'flex items-center justify-left px-4 w-full h-10 rounded-lg my-1';
+    const activeClass = 'bg-bordercol lg:shadow-test';
+    const inactiveClass = 'hover:bg-bordercol hover:shadow-test';
+    return location.pathname === path
+      ? `${baseClass} ${activeClass}`
+      : `${baseClass} ${inactiveClass}`;
+  };
+
   return (
-    <div className="absolute top-40 left-20 px-2 py-2 max-w-[18%]  bg-odark border-bordercol border-[1px] rounded-lg text-left">
+    <div className="lg:absolute lg:top-40 lg:left-20 px-2 py-2 lg:max-w-[18%]  bg-odark border-bordercol border-t-[1px] border-b-[1px] lg:border-[1px] lg:rounded-lg text-left z-20">
       <div className="min-w-52">
-        <Link to="">
-          <button className="flex items-center justify-left px-4 w-full h-10 rounded-lg my-1 hover:bg-bordercol hover:shadow-test">
+        <Link to="/topic/all">
+          <button className={getButtonClass('/topic/all')}>
             <svg
               version="1.1"
               id="Layer_2"
@@ -26,7 +38,7 @@ export default function SignupLogin() {
           </button>
         </Link>
         <Link to="/topic/games">
-          <button className="flex items-center justify-left px-4 w-full h-10 rounded-lg my-1 hover:bg-bordercol hover:shadow-test">
+          <button className={getButtonClass('/topic/games')}>
             <svg
               version="1.1"
               id="Layer_2"
@@ -48,7 +60,7 @@ export default function SignupLogin() {
           </button>
         </Link>
         <Link to="/topic/movies">
-          <button className="flex items-center justify-left pl-4 w-full h-10 rounded-lg my-1 hover:bg-bordercol hover:shadow-test">
+          <button className={getButtonClass('/topic/movies')}>
             <svg
               version="1.1"
               id="Layer_2"
@@ -56,7 +68,7 @@ export default function SignupLogin() {
               x="0px"
               y="0px"
               viewBox="0 0 42 42"
-              className="h-[1rem] mr-2 ml-2 fill-txtbright"
+              className="h-[1rem] mr-2 ml-2 fill-txtbright "
             >
               <style type="text/css"></style>
               <polygon
@@ -68,7 +80,7 @@ export default function SignupLogin() {
           </button>
         </Link>
         <Link to="/topic/animals">
-          <button className="flex items-center justify-left pl-4 w-full h-10 rounded-lg my-1 hover:bg-bordercol hover:shadow-test">
+          <button className={getButtonClass('/topic/animals')}>
             <svg
               version="1.1"
               id="Layer_2_1_"

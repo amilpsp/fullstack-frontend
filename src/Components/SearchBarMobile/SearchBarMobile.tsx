@@ -1,10 +1,10 @@
 import { useState, FormEvent } from 'react';
 
-interface SearchBarProps {
+interface SearchBarMobileProps {
   onSearch: (query: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBarMobile: React.FC<SearchBarMobileProps> = ({ onSearch }) => {
   const [query, setQuery] = useState('');
 
   const handleSubmit = (event: FormEvent) => {
@@ -22,14 +22,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="search-cancel:appearance-none search-cancel:w-4 search-cancel:h-4 text-sm w-80 relative m-0 block flex-auto rounded-full border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none focus:drop-shadow-test"
+            className="search-cancel:appearance-none search-cancel:w-4 search-cancel:h-4 text-sm w-50 relative m-0 block flex-auto rounded-lg border border-solid border-bordercol bg-bordercol bg-clip-padding px-5 py-2 text-txtbright font-normal text-surface transition duration-300 ease-in-out focus:border-borderfocus focus:text-white focus:shadow-inset focus:outline-none motion-reduce:transition-none focus:drop-shadow-test"
             placeholder="Search for a thread..."
             aria-label="Search"
             aria-describedby="button-addon2"
           />
           <button
             type="submit"
-            className="flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-txtbright [&>svg]:w-5 hover:drop-shadow-test"
+            className="flex items-center whitespace-nowrap rounded px-3 py-1.5 text-center text-base font-normal text-txtbright [&>svg]:w-5 hover:drop-shadow-test cursor-default"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -49,4 +49,4 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   );
 };
 
-export default SearchBar;
+export default SearchBarMobile;

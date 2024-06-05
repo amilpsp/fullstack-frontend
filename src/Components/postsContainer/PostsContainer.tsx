@@ -14,12 +14,12 @@ export const PostsContainer = (props: PostsContainerProps) => {
     navigate(`/thread/${threadId}/${formattedThreadName}`);
   };
   return (
-    <div className=" max-w-[50vw] mx-auto">
+    <div className="">
       {/* Title */}
-      <div className="flex items-center mt-10">
+      <div className="flex items-center">
         {props.image}
 
-        <h1 className=" text-2xl ml-1 font-light whitespace-nowrap">
+        <h1 className=" text-2xl ml-1 font-light whitespace-nowrap cursor-default">
           {props.title}
         </h1>
         <div className="border-b border-bordercol flex-1 h-full ml-3 mr-5 mt-auto mb-2"></div>
@@ -61,11 +61,13 @@ export const PostsContainer = (props: PostsContainerProps) => {
 
       {/* Table */}
       <div className="rounded-md overflow-hidden border border-bordercol my-5 text-txtbright bg-odark">
-        <table>
+        <table className=" ">
           {/* Titles */}
-          <thead className=" border-b border-bordercol justify-between">
+          <thead className=" border-b border-bordercol justify-between cursor-default">
             <tr>
-              <th className="font-thin text-xs text-left px-5 py-3 ">THREAD</th>
+              <th className="font-thin text-xs text-left px-5 py-3  ">
+                THREAD
+              </th>
               <th className="font-thin text-xs text-left pr-5">TOPIC</th>
               <th className="font-thin text-xs text-left pr-5">REPLIES</th>
               <th className="font-thin text-xs text-left pr-5">LAST REPLY</th>
@@ -84,18 +86,18 @@ export const PostsContainer = (props: PostsContainerProps) => {
                   className=" border-b border-bordercol hover:bg-bordercol cursor-pointer"
                   onClick={() => handlePostNavigation(post.id, post.name)}
                 >
-                  <td className="p-5 py-2">
+                  <td className="p-5 py-2 w-full">
                     <Link to="/thread">
                       {/* temp for navigating the webpage */}
-                      <h3>{post.name}</h3>
+                      <h3 className="my-1">{post.name}</h3>
                     </Link>
-                    <p className="text-txtdark ">
+                    <p className="text-txtdark">
                       {post.content.length < 125
                         ? post.content
                         : post.content.slice(0, 125) + '...'}
                     </p>
                   </td>
-                  <td className=" py-2 pr-5">{post.topic}</td>
+                  <td className=" py-2 pr-5 w-[4vw]">{post.topic}</td>
                   <td className=" py-2 pr-5">
                     <div className="flex gap-2 items-center">
                       <h3 className="text-lg">{post.replies}</h3>
@@ -135,23 +137,23 @@ export const PostsContainer = (props: PostsContainerProps) => {
                     </div>
                   </td>
                   <td className="py-2 pr-5">
-                    <h3 className=" whitespace-nowrap">
+                    <h3 className=" whitespace-nowrap my-1">
                       {post.lastReply.author}
                     </h3>
                     <h4 className=" whitespace-nowrap text-txtdark">
                       {post.lastReply.date}
                     </h4>
                     <h4 className=" whitespace-nowrap text-txtdark">
-                      {post.lastReply.time}
+                      {post.lastReply.time.slice(0, 5)}
                     </h4>
                   </td>
                   <td className="pr-5 py-2">
-                    <h3 className=" whitespace-nowrap">{post.author}</h3>
+                    <h3 className=" whitespace-nowrap my-1">{post.author}</h3>
                     <h4 className=" whitespace-nowrap text-txtdark">
                       {post.date}
                     </h4>
                     <h4 className=" whitespace-nowrap text-txtdark">
-                      {post.time}
+                      {post.time.slice(0, 5)}
                     </h4>
                   </td>
                 </tr>

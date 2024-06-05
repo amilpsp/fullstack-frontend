@@ -1,11 +1,11 @@
-import "./ThreadPage.css";
-import Reply from "../../Components/Reply/Reply";
-import "/src/Components/Reply/Reply.tsx";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
-import BreadcrumbsComp from "../../Components/BreadcrumbsComp/BreadcrumbsComp";
-import { useAuth } from "../../contexts/useAuth";
+import './ThreadPage.css';
+import Reply from '../../Components/Reply/Reply';
+import '/src/Components/Reply/Reply.tsx';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useNavigate, useParams } from 'react-router-dom';
+import BreadcrumbsComp from '../../Components/BreadcrumbsComp/BreadcrumbsComp';
+import { useAuth } from '../../contexts/useAuth';
 
 interface Thread {
   id: number;
@@ -47,12 +47,12 @@ const ThreadPage = () => {
 
     try {
       const commentData = {
-        author: user.name,
+        author: user.username,
         threadId: thread.id,
         content: newComment,
       };
 
-      await axios.post("http://localhost:8080/comments/add", commentData);
+      await axios.post('http://localhost:8080/comments/add', commentData);
 
       //fetches thread again to update
       await handleFetchThread();
@@ -84,7 +84,7 @@ const ThreadPage = () => {
   return (
     <div
       id="thread-page"
-      className="flex flex-col align-stretch w-[50vw] gap-6"
+      className="flex flex-col align-stretch w-[100vw] lg:w-[50vw] gap-6"
     >
       <BreadcrumbsComp />
       {isLoading ? (
@@ -97,21 +97,22 @@ const ThreadPage = () => {
             <section className="flex flex-col gap-4 ">
               <article
                 id="post-body"
-                className="border border-bordercol rounded-lg p-4 bg-odark"
+                className="border border-bordercol lg:rounded-lg p-4 bg-odark min-h-28"
               >
-                <div className="flex flex-row justify-between">
+                <div className="flex flex-row justify-between mx-1">
                   <h2 className="text-xl mb-4">{thread?.name}</h2>
                   <div className="text-xs text-txtdark">
-                    posted in{" "}
-                    <span className="text-txtbright ml-2">{thread.topic}</span>
+                    <span className=" whitespace-nowrap"> posted in</span>
+
+                    <span className="text-txtbright mx-1">{thread.topic}</span>
                   </div>
                 </div>
-                <p>{thread?.content}</p>
+                <p className="mx-1">{thread?.content}</p>
               </article>
               {/* end of post body */}
               <div
                 id="post-info"
-                className="flex flex-row justify-end gap-6 mb-8"
+                className="flex flex-row justify-end gap-6 mb-8 mx-4"
               >
                 <span
                   className=" cursor-pointer hover:underline"
@@ -125,10 +126,10 @@ const ThreadPage = () => {
             </section>
           )}
 
-          {user && (
+          {user ? (
             <form
               onSubmit={(e) => handlePostNewComment(e)}
-              className="flex gap-2"
+              className="flex gap-2 mx-2"
             >
               <textarea
                 id="add-reply"
@@ -143,9 +144,13 @@ const ThreadPage = () => {
                 className="border rounded-xl w-24 px-2 py-1 grow-0 max-h-12 border-bordercol hover:bg-bordercol cursor-pointer"
               />
             </form>
+          ) : (
+            <div className=" text-xl flex justify-center border-y border-bordercol py-2">
+              Log in to leave a comment
+            </div>
           )}
 
-          <section className="flex flex-col gap-6 mb-6">
+          <section className="flex flex-col gap-6 mb-6 mx-4">
             <div>
               <div className="text-2xl flex gap-2">
                 <svg
