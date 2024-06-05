@@ -35,7 +35,7 @@ const NewThread = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:8080/posts/add',
+        'https://loqui-6bmx.onrender.com/posts/add',
         postData
       );
       const formattedThreadName = postData.title?.replace(' ', '-');

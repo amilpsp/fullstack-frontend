@@ -52,7 +52,10 @@ const ThreadPage = () => {
         content: newComment,
       };
 
-      await axios.post('http://localhost:8080/comments/add', commentData);
+      await axios.post(
+        'https://loqui-6bmx.onrender.com/comments/add',
+        commentData
+      );
 
       //fetches thread again to update
       await handleFetchThread();
@@ -65,7 +68,7 @@ const ThreadPage = () => {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        `http://localhost:8080/posts/${threadId}`
+        `https://loqui-6bmx.onrender.com/posts/${threadId}`
       );
 
       setThread(response.data);
