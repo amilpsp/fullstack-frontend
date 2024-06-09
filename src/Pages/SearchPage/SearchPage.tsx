@@ -6,7 +6,7 @@ import './SearchPage.css';
 import { MobilePostsContainer } from '../../Components/postsContainer/MobilePostsContainer';
 /* import SearchBarMobile from '../../Components/SearchBarMobile/SearchBarMobile'; */
 
-const BASE_URL = 'https://loqui-6bmx.onrender.com/';
+const BASE_URL = 'https://loqui-6bmx.onrender.com';
 
 interface Post {
   id: number;
